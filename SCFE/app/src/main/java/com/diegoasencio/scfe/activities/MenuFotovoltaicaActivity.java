@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
 
@@ -21,6 +22,9 @@ public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.
             case R.id.button_interconectado_red:
                 Intent intent = new Intent(this, FormularioInterconectadoRedActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.image_button_help:
+                Toast.makeText(this, "Aquí se despliega un menú de ayuda", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

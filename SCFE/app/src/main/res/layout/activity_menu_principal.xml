@@ -27,15 +27,11 @@
         android:layout_below="@id/button_fotovoltaica"
         android:text="@string/sistema_eolico" />
 
-    <Button
-        android:id="@+id/button_help"
-        style="@style/ButtonCustom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/image_button_help"
+        style="@style/ButtonCustom.Help"
         android:layout_below="@id/button_eolico"
-        android:drawableLeft="@drawable/ic_help"
-        android:onClick="onClick"
-        android:text="@string/help" />
+        android:onClick="onClick" />
 
     <TextView
         android:id="@+id/textView"

@@ -30,7 +30,7 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.button_eolico:
                 break;
-            case R.id.button_help:
+            case R.id.image_button_help:
                 Toast.makeText(this, "Aquí se despliega un menú de ayuda", Toast.LENGTH_SHORT).show();
                 break;
         }

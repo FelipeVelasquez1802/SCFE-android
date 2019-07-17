@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,19 +17,28 @@
     <Button
         android:id="@+id/button_interconectado_red"
         style="@style/ButtonCustom"
+        android:layout_below="@id/textViewa"
         android:onClick="onClick"
         android:text="@string/interconectado_red" />
 
     <Button
         android:id="@+id/button_baterias"
         style="@style/ButtonCustom"
+        android:layout_below="@id/button_interconectado_red"
         android:text="@string/baterias" />
+
+    <ImageButton
+        android:id="@+id/image_button_help"
+        style="@style/ButtonCustom.Help"
+        android:layout_below="@id/button_baterias"
+        android:onClick="onClick" />
 
 
     <TextView
         android:id="@+id/textView"
         style="@style/TextViewCustom.TextFooter"
+        android:layout_alignParentBottom="true"
         android:text="@string/creditos"
         android:textAlignment="center" />
 
-</LinearLayout>
+</RelativeLayout>
