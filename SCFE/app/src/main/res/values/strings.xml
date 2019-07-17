@@ -2,4 +2,7 @@
     <string name="app_name">Sistema de Cálculo Fotovoltaico y Eólico</string>
     <string name="sistema_fotovoltaico">Sistema Fotovoltaico</string>
     <string name="sistema_eolico">Sistema Eólico</string>
+    <string name="interconectado_red">Interconectado a la red</string>
+    <string name="baterias">Con baterias</string>
+    <string name="creditos">Desarrollado por @diegoasencio96</string>
 </resources>

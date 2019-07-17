@@ -17,8 +17,8 @@
     <Button
         android:id="@+id/button_fotovoltaica"
         style="@style/ButtonCustom"
-        android:text="@string/sistema_fotovoltaico"
-        android:onClick="onClick"/>
+        android:onClick="onClick"
+        android:text="@string/sistema_fotovoltaico" />
 
     <Button
         android:id="@+id/button_eolico"
@@ -28,7 +28,7 @@
     <TextView
         android:id="@+id/textView"
         style="@style/TextViewCustom.TextFooter"
-        android:text="Desarrollado por @diegoasencio96"
+        android:text="@string/creditos"
         android:textAlignment="center" />
 
 

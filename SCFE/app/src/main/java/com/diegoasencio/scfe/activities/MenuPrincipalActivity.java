@@ -14,12 +14,11 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
+        //setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
     }
-
 
     @Override
     public void onClick(View view) {

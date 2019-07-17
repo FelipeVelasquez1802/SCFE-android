@@ -1,9 +1,11 @@
-package com.diegoasencio.scfe;
+package com.diegoasencio.scfe.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class FormularioInterconectadoRed extends AppCompatActivity {
+import com.diegoasencio.scfe.R;
+
+public class FormularioInterconectadoRedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

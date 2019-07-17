@@ -12,25 +12,65 @@
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
-    <style name="ButtonCustom" parent="TextAppearance.AppCompat.Button">
+    <style name="ButtonCustom" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">20dp</item>
         <item name="android:background">#C8E6C9</item>
     </style>
 
+    <style name="ButtonCustom.Operation">
+        <item name="android:background">#cccccc</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
     <style name="TextViewCustom">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="TextViewCustom.Title">
         <item name="android:textSize">32sp</item>
-        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextViewCustom.Question">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextViewCustom.Item">
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="TextViewCustom.TextFooter">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">#C8E6C9</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">#C8E6C9</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
