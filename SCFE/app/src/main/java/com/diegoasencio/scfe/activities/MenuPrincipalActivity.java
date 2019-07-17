@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
 
@@ -28,6 +29,9 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
                 startActivity(intent);
                 break;
             case R.id.button_eolico:
+                break;
+            case R.id.button_help:
+                Toast.makeText(this, "Aquí se despliega un menú de ayuda", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
