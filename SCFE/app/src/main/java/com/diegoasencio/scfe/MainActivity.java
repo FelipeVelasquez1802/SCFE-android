@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.diegoasencio.scfe.activities.MenuPrincipalActivity;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(MainActivity.this, MenuPrincipal.class);
+                Intent mainIntent = new Intent(MainActivity.this, MenuPrincipalActivity.class);
                 MainActivity.this.startActivity(mainIntent);
                 MainActivity.this.finish();
             }

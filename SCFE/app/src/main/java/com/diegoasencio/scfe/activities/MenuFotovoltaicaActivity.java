@@ -1,4 +1,4 @@
-package com.diegoasencio.scfe;
+package com.diegoasencio.scfe.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MenuFotovoltaica extends AppCompatActivity {
+import com.diegoasencio.scfe.FormularioInterconectadoRed;
+import com.diegoasencio.scfe.R;
+
+public class MenuFotovoltaicaActivity extends AppCompatActivity {
 
     Button button_interconectado_a_la_red;
 
@@ -20,9 +23,9 @@ public class MenuFotovoltaica extends AppCompatActivity {
         button_interconectado_a_la_red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainIntent = new Intent(MenuFotovoltaica.this, FormularioInterconectadoRed.class);
-                MenuFotovoltaica.this.startActivity(mainIntent);
-                // MenuPrincipal.this.finish();
+                Intent mainIntent = new Intent(MenuFotovoltaicaActivity.this, FormularioInterconectadoRed.class);
+                MenuFotovoltaicaActivity.this.startActivity(mainIntent);
+                // MenuPrincipalActivity.this.finish();
             }
         });
 

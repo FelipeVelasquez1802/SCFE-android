@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Sistema de Cálculo Fotovoltaico y Eólico</string>
+    <string name="sistema_fotovoltaico">Sistema Fotovoltaico</string>
+    <string name="sistema_eolico">Sistema Eólico</string>
 </resources>
