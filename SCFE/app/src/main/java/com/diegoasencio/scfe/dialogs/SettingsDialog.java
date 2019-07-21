@@ -5,14 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.interfaces.Initials;
@@ -20,21 +18,18 @@ import com.diegoasencio.scfe.tools.Constant;
 
 public class SettingsDialog extends DialogFragment implements Initials {
 
-    private String domain_string;
-
 
     @Override
     public void initElements() {
-        preferences = getActivity().getSharedPreferences("scfe_preferences", Context.MODE_PRIVATE);
-        domain_string = preferences.getString("domain", null);
-        if (domain_string == null) {
-            domain_string = Constant.URL_DOMAIN;
+        preferences = getActivity().getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_PRIVATE);
+        String domain_string = preferences.getString("domain", null);
+        if (domain_string != null) {
+            Constant.URL_DOMAIN = domain_string;
         }
     }
 
     @Override
     public void initObjects() {
-        domain_string = null;
     }
 
     public interface AlertDialogListener {
@@ -57,7 +52,7 @@ public class SettingsDialog extends DialogFragment implements Initials {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_settings, null);
         final EditText domain = view.findViewById(R.id.edittext_domain);
-        domain.setText(domain_string);
+        domain.setText(Constant.URL_DOMAIN);
         builder.setView(view)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override

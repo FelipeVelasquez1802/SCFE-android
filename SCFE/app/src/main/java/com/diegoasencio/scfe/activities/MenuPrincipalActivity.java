@@ -1,6 +1,8 @@
 package com.diegoasencio.scfe.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,17 +15,20 @@ import android.widget.Toast;
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.dialogs.HelpDialog;
 import com.diegoasencio.scfe.dialogs.SettingsDialog;
+import com.diegoasencio.scfe.interfaces.Initials;
+import com.diegoasencio.scfe.tools.Constant;
 
-public class MenuPrincipalActivity extends AppCompatActivity implements View.OnClickListener, HelpDialog.AlertDialogListener, SettingsDialog.AlertDialogListener {
+public class MenuPrincipalActivity extends AppCompatActivity implements Initials, View.OnClickListener, HelpDialog.AlertDialogListener, SettingsDialog.AlertDialogListener {
 
-    Button button_fotovoltaica;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
-
+        initElements();
+        initObjects();
     }
 
     @Override
@@ -79,5 +84,19 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void initElements() {
+        preferences = getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_PRIVATE);
+        String domain_string = preferences.getString("domain", null);
+        if (domain_string != null) {
+            Constant.URL_DOMAIN = domain_string;
+        }
+    }
+
+    @Override
+    public void initObjects() {
+
     }
 }

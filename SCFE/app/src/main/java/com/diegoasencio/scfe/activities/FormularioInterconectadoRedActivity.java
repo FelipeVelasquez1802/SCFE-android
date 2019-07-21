@@ -19,9 +19,9 @@ import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
+import com.diegoasencio.scfe.objects.Inversor;
 import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
-import com.diegoasencio.scfe.objects.Station;
 import com.diegoasencio.scfe.tools.Constant;
 
 public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener {
@@ -29,18 +29,29 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     private General general;
     private State[] states;
     private City[] cities;
-    private Station[] stations;
     private Panel[] panels;
+    private Inversor[] inversors;
 
     private Spinner state;
     private Spinner city;
-    private Spinner station;
     private Spinner panel;
+    private Spinner inversor;
 
-    private TextView solar_radiation;
-    private TextView precio;
+    private TextView peak_solar;
+    private TextView price_panel;
     private TextView potencia_modulo;
-    private TextView rendimiento;
+    private TextView vmpp;
+    private TextView lmpp;
+    private TextView lsc_panel;
+    private TextView dimension;
+    private TextView controllers;
+    private TextView involtage;
+    private TextView system_voltage;
+    private TextView ldc;
+    private TextView lsc_inversor;
+    private TextView efficiency;
+    private TextView price_inversor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +59,6 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         setContentView(R.layout.activity_formulario_interconectado_red);
         initElements();
         initObjects();
-        //request = new VolleyRequest();
-        //request.request(this, Constant.URL_STATE);
 
     }
 
@@ -57,13 +66,23 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     public void initElements() {
         state = findViewById(R.id.spinner_state);
         city = findViewById(R.id.spinner_city);
-        station = findViewById(R.id.spinner_station);
         panel = findViewById(R.id.spinner_panel);
+        inversor = findViewById(R.id.spinner_inversor);
 
-        solar_radiation = findViewById(R.id.textview_solar_radiation);
-        precio = findViewById(R.id.textview_precio);
+        peak_solar = findViewById(R.id.textview_peak_solar);
+        price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
-        rendimiento = findViewById(R.id.textview_rendimiento);
+        vmpp = findViewById(R.id.textview_vpmm);
+        lmpp = findViewById(R.id.textview_lmpp);
+        lsc_panel = findViewById(R.id.textview_lsc_panel);
+        dimension = findViewById(R.id.textview_dimension);
+        controllers = findViewById(R.id.textview_controllers);
+        involtage = findViewById(R.id.textview_involtage);
+        system_voltage = findViewById(R.id.textview_system_voltage);
+        ldc = findViewById(R.id.textview_ldc);
+        lsc_inversor = findViewById(R.id.textview_lsc_inversor);
+        efficiency = findViewById(R.id.textview_efficiency);
+        price_inversor = findViewById(R.id.textview_price_inversor);
 
         request(Constant.URL_GENERAL);
     }
@@ -73,8 +92,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         general = null;
         states = null;
         cities = null;
-        stations = null;
         panels = null;
+        inversors = null;
     }
 
     private void request(final String path) {
@@ -89,8 +108,10 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                                 general = Constant.GSON.fromJson(response, General.class);
                                 states = general.getDepartamentos();
                                 panels = general.getPaneles();
+                                inversors = general.getInversores();
                                 dumpdataState();
                                 dumpdataPanel();
+                                dumpdataInversor();
                                 break;
                         }
                     }
@@ -118,18 +139,18 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         city.setOnItemSelectedListener(this);
     }
 
-    private void dumpdataStation() {
-        ArrayAdapter<Station> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, stations);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        station.setAdapter(arrayAdapter);
-        station.setOnItemSelectedListener(this);
-    }
-
     private void dumpdataPanel() {
         ArrayAdapter<Panel> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, panels);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         panel.setAdapter(arrayAdapter);
         panel.setOnItemSelectedListener(this);
+    }
+
+    private void dumpdataInversor() {
+        ArrayAdapter<Inversor> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, inversors);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inversor.setAdapter(arrayAdapter);
+        inversor.setOnItemSelectedListener(this);
     }
 
     @Override
@@ -140,18 +161,26 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 dumpdataCity();
                 break;
             case R.id.spinner_city:
-                stations = cities[i].getEstacion();
-                dumpdataStation();
-                break;
-            case R.id.spinner_station:
-                Station station = stations[i];
-                solar_radiation.setText(station.getRadiacion() + "");
+                peak_solar.setText(cities[i].getHora_solar_pico());
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
-                precio.setText(panel.getPrecio() + "");
+                price_panel.setText(panel.getPrecio() + "");
                 potencia_modulo.setText(panel.getPotencia() + "");
-                rendimiento.setText(panel.getRendimiento() + "");
+                vmpp.setText(panel.getVmpp() + "");
+                lmpp.setText(panel.getLmpp() + "");
+                lsc_panel.setText(panel.getLsc() + "");
+                dimension.setText(panel.getDimension());
+                break;
+            case R.id.spinner_inversor:
+                Inversor inversor = inversors[i];
+                controllers.setText(inversor.getNumero_controladores() + "");
+                involtage.setText(inversor.getVoltaje_entrada() + "");
+                system_voltage.setText(inversor.getVoltaje_sistema() + "");
+                ldc.setText(inversor.getLdc() + "");
+                lsc_inversor.setText(inversor.getLsc() + "");
+                efficiency.setText(inversor.getEficiencia() + "");
+                price_inversor.setText(inversor.getPrecio() + "");
                 break;
         }
     }

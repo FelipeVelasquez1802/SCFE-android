@@ -4,14 +4,14 @@ public class City {
 
     private int id;
     private String nombre;
-    private Station[] estacion;
+    private String hora_solar_pico;
 
-    public Station[] getEstacion() {
-        return estacion;
+    public String getHora_solar_pico() {
+        return hora_solar_pico;
     }
 
-    public void setEstacion(Station[] estacion) {
-        this.estacion = estacion;
+    public void setHora_solar_pico(String hora_solar_pico) {
+        this.hora_solar_pico = hora_solar_pico;
     }
 
     public int getId() {

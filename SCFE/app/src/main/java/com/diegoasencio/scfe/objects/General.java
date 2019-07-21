@@ -4,6 +4,15 @@ public class General {
 
     private State[] departamentos;
     private Panel[] paneles;
+    private Inversor[] inversores;
+
+    public Inversor[] getInversores() {
+        return inversores;
+    }
+
+    public void setInversores(Inversor[] inversores) {
+        this.inversores = inversores;
+    }
 
     public State[] getDepartamentos() {
         return departamentos;

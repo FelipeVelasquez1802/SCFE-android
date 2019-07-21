@@ -10,4 +10,15 @@
     <string name="settings">Configuración</string>
     <string name="domain">Dominio</string>
     <string name="ok">Confirmar</string>
+    <string name="pak_solar">Hora solar pico</string>
+    <string name="vmpp">VPMM</string>
+    <string name="dimension">Dimensión</string>
+    <string name="lmpp">LMPP</string>
+    <string name="LSC">LSC</string>
+    <string name="controllers">Número de controladores</string>
+    <string name="involtage">Voltaje entrada MPPT</string>
+    <string name="system_voltage">Voltaje del sistema</string>
+    <string name="ldc">LDC</string>
+    <string name="efficiency">Eficiencia</string>
+    <string name="price">Precio</string>
 </resources>

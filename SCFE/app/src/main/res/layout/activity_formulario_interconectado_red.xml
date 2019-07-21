@@ -72,7 +72,6 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,29 +81,10 @@
                 android:id="@+id/textViewsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Estación" />
-
-            <Spinner
-                android:id="@+id/spinner_station"
-                style="@style/Spinner"
-                android:layout_height="25dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:text="@string/pak_solar" />
 
             <TextView
-                android:id="@+id/textViewcsdt"
-                style="@style/TextViewCustom.Item"
-                android:layout_weight="1"
-                android:text="Radiación solar" />
-
-            <TextView
-                android:id="@+id/textview_solar_radiation"
+                android:id="@+id/textview_peak_solar"
                 style="@style/EditText"
                 android:layout_weight="1"
                 android:textColor="@android:color/black" />
@@ -141,25 +121,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textfvfrVicsdt"
-                style="@style/TextViewCustom.Item"
-                android:layout_weight="1"
-                android:text="Precio" />
-
-            <TextView
-                android:id="@+id/textview_precio"
-                style="@style/EditText"
-                android:layout_weight="1"
-                android:textColor="@android:color/black" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
                 android:id="@+id/textfvfrVacvsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
@@ -178,13 +139,86 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textview11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/dimension" />
+
+            <TextView
+                android:id="@+id/textview_dimension"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfvfrVicsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Precio" />
+
+            <TextView
+                android:id="@+id/textview_price_panel"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/vmpp" />
+
+            <TextView
+                android:id="@+id/textview_vpmm"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview12"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/lmpp" />
+
+            <TextView
+                android:id="@+id/textview_lmpp"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
                 android:id="@+id/textfrVacvsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Rend. energético" />
+                android:text="@string/LSC" />
 
             <TextView
-                android:id="@+id/textview_rendimiento"
+                android:id="@+id/textview_lsc_panel"
                 style="@style/EditText"
                 android:layout_weight="1"
                 android:textColor="@android:color/black" />
@@ -208,7 +242,7 @@
                 android:text="Inversor" />
 
             <Spinner
-                android:id="@+id/spsinert1"
+                android:id="@+id/spinner_inversor"
                 style="@style/Spinner"
                 android:layout_height="25dp"
                 android:layout_weight="1" />
@@ -217,18 +251,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textikhgdsddt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Valor" />
+                android:text="@string/controllers" />
 
-            <EditText
-                android:id="@+id/spsinvbhnt1"
+            <TextView
+                android:id="@+id/textview_controllers"
                 style="@style/EditText"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tekficsdt1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/involtage" />
+
+            <TextView
+                android:id="@+id/textview_involtage"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tekficsdt11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/system_voltage" />
+
+            <TextView
+                android:id="@+id/textview_system_voltage"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -240,12 +312,13 @@
                 android:id="@+id/tekficsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Valor" />
+                android:text="@string/ldc" />
 
-            <EditText
-                android:id="@+id/spshgfdert1"
+            <TextView
+                android:id="@+id/textview_ldc"
                 style="@style/EditText"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -257,12 +330,50 @@
                 android:id="@+id/textjghfdsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Valor" />
+                android:text="@string/LSC" />
 
-            <EditText
-                android:id="@+id/spsvfert1"
+            <TextView
+                android:id="@+id/textview_lsc_inversor"
                 style="@style/EditText"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textjghfdsdt1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/efficiency" />
+
+            <TextView
+                android:id="@+id/textview_efficiency"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textjghfdsdt11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/price" />
+
+            <TextView
+                android:id="@+id/textview_price_inversor"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+
         </LinearLayout>
 
         <Button

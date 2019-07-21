@@ -6,7 +6,42 @@ public class Panel {
     private String nombre;
     private double precio;
     private double potencia;
-    private double rendimiento;
+    private String dimension;
+    private double vmpp;
+    private double lmpp;
+    private double lsc;
+
+    public double getLmpp() {
+        return lmpp;
+    }
+
+    public void setLmpp(double lmpp) {
+        this.lmpp = lmpp;
+    }
+
+    public double getLsc() {
+        return lsc;
+    }
+
+    public void setLsc(double lsc) {
+        this.lsc = lsc;
+    }
+
+    public double getVmpp() {
+        return vmpp;
+    }
+
+    public void setVmpp(double vmpp) {
+        this.vmpp = vmpp;
+    }
+
+    public String getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension;
+    }
 
     public int getId() {
         return id;
@@ -38,14 +73,6 @@ public class Panel {
 
     public void setPotencia(double potencia) {
         this.potencia = potencia;
-    }
-
-    public double getRendimiento() {
-        return rendimiento;
-    }
-
-    public void setRendimiento(double rendimiento) {
-        this.rendimiento = rendimiento;
     }
 
     @Override
