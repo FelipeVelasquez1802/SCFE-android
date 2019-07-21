@@ -1,18 +1,10 @@
 package com.diegoasencio.scfe.objects;
 
-public class City {
+public class Station {
 
     private int id;
     private String nombre;
-    private Station[] estacion;
-
-    public Station[] getEstacion() {
-        return estacion;
-    }
-
-    public void setEstacion(Station[] estacion) {
-        this.estacion = estacion;
-    }
+    private double radiacion;
 
     public int getId() {
         return id;
@@ -28,6 +20,14 @@ public class City {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public double getRadiacion() {
+        return radiacion;
+    }
+
+    public void setRadiacion(double radiacion) {
+        this.radiacion = radiacion;
     }
 
     @Override

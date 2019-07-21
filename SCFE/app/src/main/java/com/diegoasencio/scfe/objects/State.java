@@ -4,14 +4,14 @@ public class State {
 
     private int id;
     private String nombre;
-    private City[] cities;
+    private City[] municipio;
 
-    public City[] getCities() {
-        return cities;
+    public City[] getMunicipio() {
+        return municipio;
     }
 
-    public void setCities(City[] cities) {
-        this.cities = cities;
+    public void setMunicipio(City[] municipio) {
+        this.municipio = municipio;
     }
 
     public int getId() {
