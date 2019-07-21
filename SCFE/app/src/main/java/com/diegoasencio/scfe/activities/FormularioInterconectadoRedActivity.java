@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.interfaces.initials;
+import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
 import com.diegoasencio.scfe.objects.Panel;
@@ -25,7 +24,7 @@ import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.objects.Station;
 import com.diegoasencio.scfe.tools.Constant;
 
-public class FormularioInterconectadoRedActivity extends AppCompatActivity implements initials, AdapterView.OnItemSelectedListener {
+public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener {
 
     private General general;
     private State[] states;

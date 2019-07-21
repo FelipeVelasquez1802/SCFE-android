@@ -4,14 +4,17 @@ import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.dialogs.HelpDialog;
+import com.diegoasencio.scfe.dialogs.SettingsDialog;
 
-public class MenuPrincipalActivity extends AppCompatActivity implements View.OnClickListener, HelpDialog.AlertDialogListener {
+public class MenuPrincipalActivity extends AppCompatActivity implements View.OnClickListener, HelpDialog.AlertDialogListener, SettingsDialog.AlertDialogListener {
 
     Button button_fotovoltaica;
 
@@ -33,14 +36,21 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
             case R.id.button_eolico:
                 break;
             case R.id.image_button_help:
-                //Toast.makeText(this, "Aquí se despliega un menú de ayuda", Toast.LENGTH_SHORT).show();
-                showDialog();
+                showDialog('0');
                 break;
         }
     }
 
-    private void showDialog() {
-        DialogFragment dialogFragment = new HelpDialog();
+    private void showDialog(char c) {
+        DialogFragment dialogFragment = null;
+        switch (c) {
+            case '0':
+                dialogFragment = new HelpDialog();
+                break;
+            case '1':
+                dialogFragment = new SettingsDialog();
+                break;
+        }
         dialogFragment.show(getSupportFragmentManager(), "Help");
     }
 
@@ -52,5 +62,22 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_tools, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_settings:
+                showDialog('1');
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

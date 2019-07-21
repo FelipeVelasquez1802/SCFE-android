@@ -1,6 +1,6 @@
 package com.diegoasencio.scfe.interfaces;
 
-public interface initials {
+public interface Initials {
 
     void initElements();
     void initObjects();

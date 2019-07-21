@@ -7,4 +7,7 @@
     <string name="creditos">Desarrollado por @diegoasencio96</string>
     <string name="help">Ayuda</string>
     <string name="back">Atras</string>
+    <string name="settings">Configuración</string>
+    <string name="domain">Dominio</string>
+    <string name="ok">Confirmar</string>
 </resources>
