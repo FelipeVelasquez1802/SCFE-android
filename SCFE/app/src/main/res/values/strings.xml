@@ -3,7 +3,7 @@
     <string name="sistema_fotovoltaico">Sistema Fotovoltaico</string>
     <string name="sistema_eolico">Sistema Eólico</string>
     <string name="interconectado_red">Interconectado a la red</string>
-    <string name="baterias">Con baterias</string>
+    <string name="whit_battery">Con baterias</string>
     <string name="creditos">Desarrollado por @diegoasencio96</string>
     <string name="help">Ayuda</string>
     <string name="back">Atras</string>
@@ -21,4 +21,11 @@
     <string name="ldc">LDC</string>
     <string name="efficiency">Eficiencia</string>
     <string name="price">Precio</string>
+    <string name="question_battery_1">Ingresar cuántos días de autonomía desea para el sistema aislado</string>
+    <string name="uestion_battery_2">5. Escoja la batería que desea instalar</string>
+    <string name="battery">Batería</string>
+    <string name="battery_capacity">Capacidad de la batería</string>
+    <string name="voltage">Voltaje</string>
+    <string name="profudity_discharge">Profundidad de descarga</string>
+    <string name="battery_data">4. Datos batería</string>
 </resources>

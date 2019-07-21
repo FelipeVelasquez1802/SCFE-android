@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FormularioBateriaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewa"
+            style="@style/TextViewCustom.Title"
+            android:text="@string/whit_battery"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textViewb1"
+            style="@style/TextViewCustom.Question"
+            android:text="1. Ingresar promedio de consumo de energía (w/h)" />
+
+
+        <EditText
+            android:id="@+id/editText1"
+            style="@style/EditText"
+            android:layout_width="150dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/textViewc2"
+            style="@style/TextViewCustom.Question"
+            android:text="2. Datos del lugar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewd2"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Departamento" />
+
+            <Spinner
+                android:id="@+id/spinner_state"
+                style="@style/Spinner"
+                android:layout_height="25dp"
+                android:layout_weight="1"></Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview_country"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Municipio" />
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                style="@style/Spinner"
+                android:layout_height="25sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewsdt1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/pak_solar" />
+
+            <TextView
+                android:id="@+id/textview_peak_solar"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textVie36wc"
+            style="@style/TextViewCustom.Question"
+            android:text="3. Panel solar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textVicsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Panel" />
+
+            <Spinner
+                android:id="@+id/spinner_panel"
+                style="@style/Spinner"
+                android:layout_height="25dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfvfrVacvsdt2"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Potencia del módulo" />
+
+            <TextView
+                android:id="@+id/textview_potencia_modulo"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/dimension" />
+
+            <TextView
+                android:id="@+id/textview_dimension"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfvfrVicsdt2"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Precio" />
+
+            <TextView
+                android:id="@+id/textview_price_panel"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/vmpp" />
+
+            <TextView
+                android:id="@+id/textview_vpmm"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview12"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/lmpp" />
+
+            <TextView
+                android:id="@+id/textview_lmpp"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfrVacvsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/LSC" />
+
+            <TextView
+                android:id="@+id/textview_lsc_panel"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextViewCustom.Question"
+            android:text="@string/battery_data" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textViewb"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/question_battery_1" />
+
+
+            <EditText
+                android:id="@+id/editText"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewc"
+            style="@style/TextViewCustom.Question"
+            android:text="@string/uestion_battery_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewd"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/battery" />
+
+            <Spinner
+                android:id="@+id/spinner_battery"
+                style="@style/Spinner"
+                android:layout_height="25dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/battery_capacity" />
+
+            <TextView
+                android:id="@+id/textview_capacity_battery"
+                style="@style/EditText"
+                android:textColor="@android:color/black"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/voltage" />
+
+            <TextView
+                android:id="@+id/textview_voltage"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfvfrVacvsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/profudity_discharge" />
+
+            <TextView
+                android:id="@+id/textview_profundity_discharge"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfvfrVicsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Precio" />
+
+            <TextView
+                android:id="@+id/textview_price_battery"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textVie6wc"
+            style="@style/TextViewCustom.Question"
+            android:layout_weight="1"
+            android:text="6. Inversor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/texticsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Inversor" />
+
+            <Spinner
+                android:id="@+id/spinner_inversor"
+                style="@style/Spinner"
+                android:layout_height="25dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textikhgdsddt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/controllers" />
+
+            <TextView
+                android:id="@+id/textview_controllers"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tekficsdt1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/involtage" />
+
+            <TextView
+                android:id="@+id/textview_involtage"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tekficsdt11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/system_voltage" />
+
+            <TextView
+                android:id="@+id/textview_system_voltage"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tekficsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/ldc" />
+
+            <TextView
+                android:id="@+id/textview_ldc"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textjghfdsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/LSC" />
+
+            <TextView
+                android:id="@+id/textview_lsc_inversor"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textjghfdsdt1"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/efficiency" />
+
+            <TextView
+                android:id="@+id/textview_efficiency"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textjghfdsdt11"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/price" />
+
+            <TextView
+                android:id="@+id/textview_price_inversor"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonacpe"
+            style="@style/ButtonCustom.Operation"
+            android:text="Calcular" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextViewCustom.TextFooter"
+            android:text="@string/creditos"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+</ScrollView>

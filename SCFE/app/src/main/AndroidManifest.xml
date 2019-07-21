@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activities.FormularioBateriaActivity"
+            android:parentActivityName=".activities.MenuFotovoltaicaActivity"></activity>
+        <activity
             android:name=".activities.FormularioInterconectadoRedActivity"
             android:parentActivityName=".activities.MenuFotovoltaicaActivity" />
         <activity
             android:name=".activities.MenuFotovoltaicaActivity"
             android:parentActivityName=".activities.MenuPrincipalActivity" />
-        <activity android:name=".activities.MenuPrincipalActivity"></activity>
+        <activity android:name=".activities.MenuPrincipalActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -20,13 +20,17 @@ public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()) {
             case R.id.button_interconectado_red:
-                Intent intent = new Intent(this, FormularioInterconectadoRedActivity.class);
+                intent = new Intent(this, FormularioInterconectadoRedActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.button_baterias:
+                intent = new Intent(this, FormularioBateriaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.image_button_help:
-                //Toast.makeText(this, "Aquí se despliega un menú de ayuda", Toast.LENGTH_SHORT).show();
                 showDialog();
                 break;
         }

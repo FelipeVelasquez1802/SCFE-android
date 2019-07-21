@@ -25,7 +25,8 @@
         android:id="@+id/button_baterias"
         style="@style/ButtonCustom"
         android:layout_below="@id/button_interconectado_red"
-        android:text="@string/baterias" />
+        android:onClick="onClick"
+        android:text="@string/whit_battery" />
 
     <ImageButton
         android:id="@+id/image_button_help"
