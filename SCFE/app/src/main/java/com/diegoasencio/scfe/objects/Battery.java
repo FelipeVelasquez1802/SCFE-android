@@ -2,11 +2,20 @@ package com.diegoasencio.scfe.objects;
 
 public class Battery {
 
+    private int id;
     private String nombre;
     private double precio;
     private int capacidad;
     private int profundidad_descarga;
     private double voltaje;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

@@ -7,8 +7,7 @@
     tools:context=".activities.FormularioInterconectadoRedActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/LinearLayoutCustom"
         android:background="@drawable/background"
         android:orientation="vertical">
 
@@ -35,10 +34,7 @@
             style="@style/TextViewCustom.Question"
             android:text="2. Datos del lugar" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textViewd"
@@ -49,15 +45,11 @@
             <Spinner
                 android:id="@+id/spinner_state"
                 style="@style/Spinner"
-                android:layout_height="25dp"
                 android:layout_weight="1"></Spinner>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textViewdt"
@@ -68,14 +60,10 @@
             <Spinner
                 android:id="@+id/spinner_city"
                 style="@style/Spinner"
-                android:layout_height="25sp"
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textViewsdt"
@@ -96,10 +84,7 @@
             style="@style/TextViewCustom.Question"
             android:text="3. Panel solar" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textVicsdt"
@@ -110,15 +95,11 @@
             <Spinner
                 android:id="@+id/spinner_panel"
                 style="@style/Spinner"
-                android:layout_height="25dp"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textfvfrVacvsdt"
@@ -133,10 +114,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textview11"
@@ -151,10 +129,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textfvfrVicsdt"
@@ -170,10 +145,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textview1"
@@ -188,10 +160,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textview12"
@@ -206,10 +175,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textfrVacvsdt"
@@ -230,10 +196,7 @@
             android:layout_weight="1"
             android:text="4. Inversor" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/texticsdt"
@@ -244,15 +207,10 @@
             <Spinner
                 android:id="@+id/spinner_inversor"
                 style="@style/Spinner"
-                android:layout_height="25dp"
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textikhgdsddt"
@@ -267,10 +225,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/tekficsdt1"
@@ -285,10 +240,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/tekficsdt11"
@@ -303,10 +255,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/tekficsdt"
@@ -321,10 +270,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textjghfdsdt"
@@ -339,10 +285,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textjghfdsdt1"
@@ -357,10 +300,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
                 android:id="@+id/textjghfdsdt11"

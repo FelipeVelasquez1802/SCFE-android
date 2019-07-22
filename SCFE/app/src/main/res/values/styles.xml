@@ -67,20 +67,30 @@
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:background">#C8E6C9</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/edittext</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="Spinner" parent="Widget.AppCompat.Spinner">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:textSize">15sp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:background">#C8E6C9</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/spinner</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="LinearLayoutCustom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LinearLayoutCustom.Item">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
 </resources>
