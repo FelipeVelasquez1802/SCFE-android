@@ -7,8 +7,8 @@ public class Inversor {
     private int numero_controladores;
     private double voltaje_entrada;
     private double voltaje_sistema;
-    private double ldc;
-    private double lsc;
+    private double idc;
+    private double isc;
     private double eficiencia;
     private double precio;
 
@@ -52,20 +52,20 @@ public class Inversor {
         this.voltaje_sistema = voltaje_sistema;
     }
 
-    public double getLdc() {
-        return ldc;
+    public double getIdc() {
+        return idc;
     }
 
-    public void setLdc(double ldc) {
-        this.ldc = ldc;
+    public void setIdc(double idc) {
+        this.idc = idc;
     }
 
-    public double getLsc() {
-        return lsc;
+    public double getIsc() {
+        return isc;
     }
 
-    public void setLsc(double lsc) {
-        this.lsc = lsc;
+    public void setIsc(double isc) {
+        this.isc = isc;
     }
 
     public double getEficiencia() {

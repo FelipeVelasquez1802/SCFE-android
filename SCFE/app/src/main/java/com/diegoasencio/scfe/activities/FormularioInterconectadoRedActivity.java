@@ -41,14 +41,14 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     private TextView price_panel;
     private TextView potencia_modulo;
     private TextView vmpp;
-    private TextView lmpp;
-    private TextView lsc_panel;
+    private TextView impp;
+    private TextView isc_panel;
     private TextView dimension;
     private TextView controllers;
     private TextView involtage;
     private TextView system_voltage;
-    private TextView ldc;
-    private TextView lsc_inversor;
+    private TextView idc;
+    private TextView isc_inversor;
     private TextView efficiency;
     private TextView price_inversor;
 
@@ -73,14 +73,14 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
         vmpp = findViewById(R.id.textview_vpmm);
-        lmpp = findViewById(R.id.textview_lmpp);
-        lsc_panel = findViewById(R.id.textview_lsc_panel);
+        impp = findViewById(R.id.textview_lmpp);
+        isc_panel = findViewById(R.id.textview_lsc_panel);
         dimension = findViewById(R.id.textview_dimension);
         controllers = findViewById(R.id.textview_controllers);
         involtage = findViewById(R.id.textview_involtage);
         system_voltage = findViewById(R.id.textview_system_voltage);
-        ldc = findViewById(R.id.textview_ldc);
-        lsc_inversor = findViewById(R.id.textview_lsc_inversor);
+        idc = findViewById(R.id.textview_ldc);
+        isc_inversor = findViewById(R.id.textview_lsc_inversor);
         efficiency = findViewById(R.id.textview_efficiency);
         price_inversor = findViewById(R.id.textview_price_inversor);
 
@@ -168,8 +168,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 price_panel.setText(panel.getPrecio() + "");
                 potencia_modulo.setText(panel.getPotencia() + "");
                 vmpp.setText(panel.getVmpp() + "");
-                lmpp.setText(panel.getLmpp() + "");
-                lsc_panel.setText(panel.getLsc() + "");
+                impp.setText(panel.getImpp() + "");
+                isc_panel.setText(panel.getIsc() + "");
                 dimension.setText(panel.getDimension());
                 break;
             case R.id.spinner_inversor:
@@ -177,8 +177,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 controllers.setText(inversor.getNumero_controladores() + "");
                 involtage.setText(inversor.getVoltaje_entrada() + "");
                 system_voltage.setText(inversor.getVoltaje_sistema() + "");
-                ldc.setText(inversor.getLdc() + "");
-                lsc_inversor.setText(inversor.getLsc() + "");
+                idc.setText(inversor.getIdc() + "");
+                isc_inversor.setText(inversor.getIsc() + "");
                 efficiency.setText(inversor.getEficiencia() + "");
                 price_inversor.setText(inversor.getPrecio() + "");
                 break;

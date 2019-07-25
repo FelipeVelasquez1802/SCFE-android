@@ -8,23 +8,23 @@ public class Panel {
     private double potencia;
     private String dimension;
     private double vmpp;
-    private double lmpp;
-    private double lsc;
+    private double impp;
+    private double isc;
 
-    public double getLmpp() {
-        return lmpp;
+    public double getImpp() {
+        return impp;
     }
 
-    public void setLmpp(double lmpp) {
-        this.lmpp = lmpp;
+    public void setImpp(double impp) {
+        this.impp = impp;
     }
 
-    public double getLsc() {
-        return lsc;
+    public double getIsc() {
+        return isc;
     }
 
-    public void setLsc(double lsc) {
-        this.lsc = lsc;
+    public void setIsc(double isc) {
+        this.isc = isc;
     }
 
     public double getVmpp() {

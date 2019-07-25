@@ -16,13 +16,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">20dp</item>
-        <item name="android:background">#C8E6C9</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@drawable/text_custom</item>
     </style>
 
     <style name="ButtonCustom.Operation">
-        <item name="android:background">#cccccc</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="ButtonCustom.Help" parent="Widget.AppCompat.ImageButton">
@@ -49,11 +48,11 @@
     </style>
 
     <style name="TextViewCustom.Question">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="TextViewCustom.Item">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="TextViewCustom.TextFooter">

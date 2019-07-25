@@ -13,12 +13,12 @@
     <string name="pak_solar">Hora solar pico</string>
     <string name="vmpp">VPMM</string>
     <string name="dimension">Dimensión</string>
-    <string name="lmpp">LMPP</string>
-    <string name="LSC">LSC</string>
+    <string name="IMPP">IMPP</string>
+    <string name="ISC">ISC</string>
     <string name="controllers">Número de controladores</string>
     <string name="involtage">Voltaje entrada MPPT</string>
     <string name="system_voltage">Voltaje del sistema</string>
-    <string name="ldc">LDC</string>
+    <string name="IDC">IDC</string>
     <string name="efficiency">Eficiencia</string>
     <string name="price">Precio</string>
     <string name="question_battery_1">Ingresar cuántos días de autonomía desea para el sistema aislado</string>
@@ -28,4 +28,9 @@
     <string name="voltage">Voltaje</string>
     <string name="profudity_discharge">Profundidad de descarga</string>
     <string name="battery_data">4. Datos batería</string>
+    <string name="consume">1. Ingresa el promedio de consumo de energía (w/h)</string>
+    <string name="ubication">2 .Selecciona el lugar del panel</string>
+    <string name="sun_panel">3. Selecciona el tipo de panel solar</string>
+    <string name="inversor_f">4. Selecciona el tipo de inversor</string>
+    <string name="inversor_b">6. Selecciona el tipo de inversor</string>
 </resources>

@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/textViewb1"
             style="@style/TextViewCustom.Question"
-            android:text="1. Ingresar promedio de consumo de energía (w/h)" />
+            android:text="@string/consume" />
 
 
         <EditText
@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/textViewc2"
             style="@style/TextViewCustom.Question"
-            android:text="2. Datos del lugar" />
+            android:text="@string/ubication" />
 
         <LinearLayout style="@style/LinearLayoutCustom.Item">
 
@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/textVie36wc"
             style="@style/TextViewCustom.Question"
-            android:text="3. Panel solar" />
+            android:text="@string/sun_panel" />
 
         <LinearLayout style="@style/LinearLayoutCustom.Item">
 
@@ -129,21 +129,6 @@
         <LinearLayout style="@style/LinearLayoutCustom.Item">
 
             <TextView
-                android:id="@+id/textfvfrVicsdt2"
-                style="@style/TextViewCustom.Item"
-                android:layout_weight="1"
-                android:text="Precio" />
-
-            <TextView
-                android:id="@+id/textview_price_panel"
-                style="@style/EditText"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout style="@style/LinearLayoutCustom.Item">
-
-            <TextView
                 android:id="@+id/textview1"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
@@ -161,7 +146,7 @@
                 android:id="@+id/textview12"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="@string/lmpp" />
+                android:text="@string/IMPP" />
 
             <TextView
                 android:id="@+id/textview_lmpp"
@@ -175,12 +160,27 @@
                 android:id="@+id/textfrVacvsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="@string/LSC" />
+                android:text="@string/ISC" />
 
             <TextView
                 android:id="@+id/textview_lsc_panel"
                 style="@style/EditText"
                 android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+            <TextView
+                android:id="@+id/textfvfrVicsdt2"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Precio" />
+
+            <TextView
+                android:id="@+id/textview_price_panel"
+                style="@style/EditText"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <TextView
@@ -285,7 +285,7 @@
             android:id="@+id/textVie6wc"
             style="@style/TextViewCustom.Question"
             android:layout_weight="1"
-            android:text="6. Inversor" />
+            android:text="@string/inversor_b" />
 
         <LinearLayout style="@style/LinearLayoutCustom.Item">
 
@@ -349,7 +349,7 @@
                 android:id="@+id/tekficsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="@string/ldc" />
+                android:text="@string/IDC" />
 
             <TextView
                 android:id="@+id/textview_ldc"
@@ -363,7 +363,7 @@
                 android:id="@+id/textjghfdsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="@string/LSC" />
+                android:text="@string/ISC" />
 
             <TextView
                 android:id="@+id/textview_lsc_inversor"
