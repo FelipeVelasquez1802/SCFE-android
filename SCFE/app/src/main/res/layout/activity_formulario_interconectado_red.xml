@@ -104,7 +104,7 @@
                 android:id="@+id/textfvfrVacvsdt"
                 style="@style/TextViewCustom.Item"
                 android:layout_weight="1"
-                android:text="Potencia del módulo" />
+                android:text="@string/power" />
 
             <TextView
                 android:id="@+id/textview_potencia_modulo"
