@@ -10,5 +10,7 @@ public class Constant {
     public static final String URL_STATE = "departamentos/";
     public static final String URL_GENERAL = "general/";
     public static final Gson GSON = new Gson();
+    public static final String INVERSOR = "inversor";
+    public static final String PANEL = "panel";
 
 }

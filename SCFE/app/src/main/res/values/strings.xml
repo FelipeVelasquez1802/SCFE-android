@@ -4,7 +4,7 @@
     <string name="sistema_eolico">Sistema Eólico</string>
     <string name="interconectado_red">Interconectado a la red</string>
     <string name="whit_battery">Con baterias</string>
-    <string name="creditos">Desarrollado por @diegoasencio96</string>
+    <string name="creditos">Desarrollado por @SimplexCE</string>
     <string name="help">Ayuda</string>
     <string name="back">Atras</string>
     <string name="settings">Configuración</string>
@@ -33,4 +33,9 @@
     <string name="sun_panel">3. Selecciona el tipo de panel solar</string>
     <string name="inversor_f">4. Selecciona el tipo de inversor</string>
     <string name="inversor_b">6. Selecciona el tipo de inversor</string>
+    <string name="calculate">Calcular</string>
+    <string name="result">Resultados</string>
+    <string name="article">Articulo</string>
+    <string name="count">Cantidad</string>
+    <string name="total">Total</string>
 </resources>

@@ -401,7 +401,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonacpe"
+            android:id="@+id/button_calculate"
             style="@style/ButtonCustom.Operation"
             android:text="Calcular" />
 

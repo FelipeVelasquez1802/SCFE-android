@@ -1,5 +1,6 @@
 package com.diegoasencio.scfe.activities;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
+import com.diegoasencio.scfe.dialogs.CalculateDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
@@ -23,14 +25,17 @@ import com.diegoasencio.scfe.objects.Inversor;
 import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
+import com.google.gson.Gson;
 
-public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener {
+public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
 
     private General general;
     private State[] states;
     private City[] cities;
     private Panel[] panels;
+    private Panel panelObj;
     private Inversor[] inversors;
+    private Inversor inversorObj;
 
     private Spinner state;
     private Spinner city;
@@ -67,7 +72,9 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         state = findViewById(R.id.spinner_state);
         city = findViewById(R.id.spinner_city);
         panel = findViewById(R.id.spinner_panel);
+        panelObj = new Panel();
         inversor = findViewById(R.id.spinner_inversor);
+        inversorObj = new Inversor();
 
         peak_solar = findViewById(R.id.textview_peak_solar);
         price_panel = findViewById(R.id.textview_price_panel);
@@ -165,6 +172,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
+                panelObj = panel;
                 price_panel.setText(panel.getPrecio() + "");
                 potencia_modulo.setText(panel.getPotencia() + "");
                 vmpp.setText(panel.getVmpp() + "");
@@ -174,6 +182,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 break;
             case R.id.spinner_inversor:
                 Inversor inversor = inversors[i];
+                inversorObj = inversor;
                 controllers.setText(inversor.getNumero_controladores() + "");
                 involtage.setText(inversor.getVoltaje_entrada() + "");
                 system_voltage.setText(inversor.getVoltaje_sistema() + "");
@@ -187,6 +196,36 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_calculate:
+                showDialog();
+                break;
+        }
+    }
+
+    private void showDialog() {
+        DialogFragment dialogFragment = new CalculateDialog();
+        Bundle args = new Bundle();
+        String panelString = Constant.GSON.toJson(panelObj);
+        String inversorString = Constant.GSON.toJson(inversorObj);
+        args.putString(Constant.PANEL, panelString);
+        args.putString(Constant.INVERSOR, inversorString);
+        dialogFragment.setArguments(args);
+        dialogFragment.show(getSupportFragmentManager(), "Calculate");
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
 
     }
 }

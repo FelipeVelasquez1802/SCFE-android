@@ -316,9 +316,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonacpe"
+            android:id="@+id/button_calculate"
             style="@style/ButtonCustom.Operation"
-            android:text="Calcular" />
+            android:onClick="onClick"
+            android:text="@string/calculate" />
 
         <TextView
             android:id="@+id/textView"

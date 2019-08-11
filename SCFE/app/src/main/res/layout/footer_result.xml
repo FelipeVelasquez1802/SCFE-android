@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/TextViewCustom.Item"
+        android:layout_weight="1"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:text="@string/total"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        style="@style/TextViewCustom.Item"
+        android:layout_weight="1"
+        android:background="@android:color/black"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        style="@style/TextViewCustom.Item"
+        android:layout_weight="1"
+        android:background="@android:color/black"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textview_result"
+        style="@style/TextViewCustom.Item"
+        android:layout_weight="1"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
