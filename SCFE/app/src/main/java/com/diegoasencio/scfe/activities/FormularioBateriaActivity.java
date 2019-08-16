@@ -180,7 +180,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 dumpdataCity();
                 break;
             case R.id.spinner_city:
-                peak_solar.setText(cities[i].getHora_solar_pico());
+                peak_solar.setText(cities[i].getHora_solar_pico() + " h");
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];

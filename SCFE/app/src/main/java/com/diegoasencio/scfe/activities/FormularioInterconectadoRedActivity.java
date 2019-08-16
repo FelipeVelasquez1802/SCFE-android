@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,13 +26,19 @@ import com.diegoasencio.scfe.objects.Inversor;
 import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
-import com.google.gson.Gson;
 
 public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
+
+    private double pp;
+    private double modulos;
+    private double area;
+    private double strings;
+    private double vstrings;
 
     private General general;
     private State[] states;
     private City[] cities;
+    private City cityObj;
     private Panel[] panels;
     private Panel panelObj;
     private Inversor[] inversors;
@@ -42,6 +49,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     private Spinner panel;
     private Spinner inversor;
 
+    private EditText energy;
     private TextView peak_solar;
     private TextView price_panel;
     private TextView potencia_modulo;
@@ -71,11 +79,13 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     public void initElements() {
         state = findViewById(R.id.spinner_state);
         city = findViewById(R.id.spinner_city);
+        cityObj = new City();
         panel = findViewById(R.id.spinner_panel);
         panelObj = new Panel();
         inversor = findViewById(R.id.spinner_inversor);
         inversorObj = new Inversor();
 
+        energy = findViewById(R.id.edittext_energy);
         peak_solar = findViewById(R.id.textview_peak_solar);
         price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
@@ -126,7 +136,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(FormularioInterconectadoRedActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FormularioInterconectadoRedActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         queue.add(stringRequest);
@@ -168,7 +178,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 dumpdataCity();
                 break;
             case R.id.spinner_city:
-                peak_solar.setText(cities[i].getHora_solar_pico());
+                cityObj = cities[i];
+                peak_solar.setText(cityObj.getHora_solar_pico() + " h");
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
@@ -199,11 +210,28 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
 
     }
 
+    private void calculate(String energy) {
+        pp = Double.valueOf(energy) / cityObj.getHora_solar_pico();
+        modulos = pp / panelObj.getPotencia();
+        String[] dim = panelObj.getDimension().split("x");
+        area = modulos * Double.valueOf(dim[0]) * Double.valueOf(dim[1]);
+        strings = modulos / inversorObj.getNumero_controladores();
+        vstrings = inversorObj.getVoltaje_entrada() * strings;
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_calculate:
-                showDialog();
+                String energyObj = energy.getText().toString();
+                energy.setError(null);
+                if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
+                    calculate(energyObj);
+                    Toast.makeText(this, "" + vstrings, Toast.LENGTH_SHORT).show();
+                    showDialog();
+                } else {
+                    energy.setError(getString(R.string.fail_energy));
+                }
                 break;
         }
     }
@@ -215,6 +243,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         String inversorString = Constant.GSON.toJson(inversorObj);
         args.putString(Constant.PANEL, panelString);
         args.putString(Constant.INVERSOR, inversorString);
+        args.putDouble(Constant.MODULOS, modulos);
         dialogFragment.setArguments(args);
         dialogFragment.show(getSupportFragmentManager(), "Calculate");
     }

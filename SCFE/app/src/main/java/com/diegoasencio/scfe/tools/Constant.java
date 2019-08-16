@@ -12,5 +12,6 @@ public class Constant {
     public static final Gson GSON = new Gson();
     public static final String INVERSOR = "inversor";
     public static final String PANEL = "panel";
+    public static final String MODULOS = "modulos";
 
 }

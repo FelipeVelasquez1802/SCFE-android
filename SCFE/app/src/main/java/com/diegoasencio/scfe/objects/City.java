@@ -4,13 +4,13 @@ public class City {
 
     private int id;
     private String nombre;
-    private String hora_solar_pico;
+    private double hora_solar_pico;
 
-    public String getHora_solar_pico() {
+    public double getHora_solar_pico() {
         return hora_solar_pico;
     }
 
-    public void setHora_solar_pico(String hora_solar_pico) {
+    public void setHora_solar_pico(double hora_solar_pico) {
         this.hora_solar_pico = hora_solar_pico;
     }
 

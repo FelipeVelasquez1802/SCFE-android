@@ -32,6 +32,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
     private List<Result> list;
     private Inversor inversor;
     private Panel panel;
+    private double modulos;
 
     @Override
     public void initElements() {
@@ -56,7 +57,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
         result1.setPrice(inversor.getPrecio());
         Result result2 = new Result();
         result2.setArticle("Modulo (" + panel.getPotencia() + ")");
-        result2.setCount(0);
+        result2.setCount(Math.round(modulos));
         result2.setPrice(panel.getPrecio());
         list = new ArrayList();
         list.add(result1);
@@ -87,6 +88,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
         listView = view.findViewById(R.id.list_view);
         inversor = Constant.GSON.fromJson(getArguments().getString(Constant.INVERSOR), Inversor.class);
         panel = Constant.GSON.fromJson(getArguments().getString(Constant.PANEL), Panel.class);
+        modulos = getArguments().getDouble(Constant.MODULOS);
         initObjects();
         initElements();
         return builder.create();
