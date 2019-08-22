@@ -13,5 +13,6 @@ public class Constant {
     public static final String INVERSOR = "inversor";
     public static final String PANEL = "panel";
     public static final String MODULOS = "modulos";
+    public static final String CALCULATE = "calculate";
 
 }

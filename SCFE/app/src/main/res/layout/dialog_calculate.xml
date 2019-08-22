@@ -11,7 +11,7 @@
         android:textColor="@android:color/black" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/view_1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/textview_title"
@@ -22,6 +22,6 @@
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view" />
+        android:layout_below="@id/view_1" />
 
 </RelativeLayout>

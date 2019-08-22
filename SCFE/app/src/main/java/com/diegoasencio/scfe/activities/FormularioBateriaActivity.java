@@ -1,10 +1,12 @@
 package com.diegoasencio.scfe.activities;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +18,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
+import com.diegoasencio.scfe.dialogs.CalculateDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.Battery;
+import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
 import com.diegoasencio.scfe.objects.Inversor;
@@ -25,13 +29,18 @@ import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
 
-public class FormularioBateriaActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener {
+public class FormularioBateriaActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
+
+    private Calculate calculate;
 
     private General general;
     private State[] states;
     private City[] cities;
+    private City cityObj;
     private Panel[] panels;
+    private Panel panelObj;
     private Inversor[] inversors;
+    private Inversor inversorObj;
     private Battery[] batteries;
 
     private Spinner state;
@@ -40,6 +49,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private Spinner inversor;
     private Spinner battery;
 
+    private EditText energy;
     private TextView peak_solar;
     private TextView price_panel;
     private TextView potencia_modulo;
@@ -71,10 +81,14 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     public void initElements() {
         state = findViewById(R.id.spinner_state);
         city = findViewById(R.id.spinner_city);
+        cityObj = new City();
         panel = findViewById(R.id.spinner_panel);
+        panelObj = new Panel();
         inversor = findViewById(R.id.spinner_inversor);
+        inversorObj = new Inversor();
         battery = findViewById(R.id.spinner_battery);
 
+        energy = findViewById(R.id.edittext_energy);
         peak_solar = findViewById(R.id.textview_peak_solar);
         price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
@@ -180,10 +194,12 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 dumpdataCity();
                 break;
             case R.id.spinner_city:
-                peak_solar.setText(cities[i].getHora_solar_pico() + " h");
+                cityObj = cities[i];
+                peak_solar.setText(cityObj.getHora_solar_pico() + " h");
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
+                panelObj = panel;
                 price_panel.setText(panel.getPrecio() + "");
                 potencia_modulo.setText(panel.getPotencia() + "");
                 vmpp.setText(panel.getVmpp() + "");
@@ -193,6 +209,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 break;
             case R.id.spinner_inversor:
                 Inversor inversor = inversors[i];
+                inversorObj = inversor;
                 controllers.setText(inversor.getNumero_controladores() + "");
                 involtage.setText(inversor.getVoltaje_entrada() + "");
                 system_voltage.setText(inversor.getVoltaje_sistema() + "");
@@ -213,6 +230,41 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_calculate:
+                String energyObj = energy.getText().toString();
+                energy.setError(null);
+                if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
+                    calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj);
+                    showDialog();
+                } else {
+                    energy.setError(getString(R.string.fail_energy));
+                }
+                break;
+        }
+    }
+
+    private void showDialog() {
+        DialogFragment dialogFragment = new CalculateDialog();
+        Bundle args = new Bundle();
+        String calculateObj = Constant.GSON.toJson(calculate);
+        args.putString(Constant.CALCULATE, calculateObj);
+        dialogFragment.setArguments(args);
+        dialogFragment.show(getSupportFragmentManager(), "Calculate");
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
 
     }
 }

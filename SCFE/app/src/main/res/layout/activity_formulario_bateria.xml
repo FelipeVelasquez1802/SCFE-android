@@ -24,7 +24,7 @@
 
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/edittext_energy"
             style="@style/EditText"
             android:layout_width="150dp"
             android:inputType="numberDecimal" />
@@ -402,6 +402,7 @@
 
         <Button
             android:id="@+id/button_calculate"
+            android:onClick="onClick"
             style="@style/ButtonCustom.Operation"
             android:text="Calcular" />
 

@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.dialogs.CalculateDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
+import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
 import com.diegoasencio.scfe.objects.Inversor;
@@ -34,6 +35,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     private double area;
     private double strings;
     private double vstrings;
+    private Calculate calculate;
 
     private General general;
     private State[] states;
@@ -210,8 +212,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
 
     }
 
-    private void calculate(String energy) {
-        pp = Double.valueOf(energy) / cityObj.getHora_solar_pico();
+    private void setCalculate(double energy) {
+        pp = energy / cityObj.getHora_solar_pico();
         modulos = pp / panelObj.getPotencia();
         String[] dim = panelObj.getDimension().split("x");
         area = modulos * Double.valueOf(dim[0]) * Double.valueOf(dim[1]);
@@ -226,8 +228,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 String energyObj = energy.getText().toString();
                 energy.setError(null);
                 if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
-                    calculate(energyObj);
-                    Toast.makeText(this, "" + vstrings, Toast.LENGTH_SHORT).show();
+                    calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj);
                     showDialog();
                 } else {
                     energy.setError(getString(R.string.fail_energy));
@@ -244,6 +245,8 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
         args.putString(Constant.PANEL, panelString);
         args.putString(Constant.INVERSOR, inversorString);
         args.putDouble(Constant.MODULOS, modulos);
+        String calculateObj = Constant.GSON.toJson(calculate);
+        args.putString(Constant.CALCULATE, calculateObj);
         dialogFragment.setArguments(args);
         dialogFragment.show(getSupportFragmentManager(), "Calculate");
     }

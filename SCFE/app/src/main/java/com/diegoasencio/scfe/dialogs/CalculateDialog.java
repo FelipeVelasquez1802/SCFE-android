@@ -8,17 +8,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.adapters.ResultAdapter;
 import com.diegoasencio.scfe.interfaces.Initials;
-import com.diegoasencio.scfe.objects.Inversor;
-import com.diegoasencio.scfe.objects.Panel;
+import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.Result;
 import com.diegoasencio.scfe.tools.Constant;
 
@@ -30,9 +27,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
     private ListView listView;
     private ResultAdapter resultAdapter;
     private List<Result> list;
-    private Inversor inversor;
-    private Panel panel;
-    private double modulos;
+    private Calculate calculate;
 
     @Override
     public void initElements() {
@@ -47,18 +42,26 @@ public class CalculateDialog extends DialogFragment implements Initials {
             total += list.get(i).getTotal();
         }
         result.setText(total + "");
+        TextView number_module = vFooter.findViewById(R.id.textview_number_modules);
+        number_module.setText(String.format(getString(R.string.number_string) + "", calculate.getStrings(), calculate.getInversor().getNumero_controladores()));
+        TextView area_min = vFooter.findViewById(R.id.textview_area);
+        area_min.setText(String.format(getString(R.string.min_area) + "", calculate.getArea()));
+        TextView monthly_saving = vFooter.findViewById(R.id.textview_monthly_saving);
+        monthly_saving.setText(String.format(getString(R.string.monthly_savings) + "", Math.round(calculate.getAhorroMensual())));
+        TextView note = vFooter.findViewById(R.id.textview_note);
+        note.setText(getText(R.string.note_normal));
     }
 
     @Override
     public void initObjects() {
         Result result1 = new Result();
         result1.setArticle(Constant.INVERSOR);
-        result1.setCount(inversor.getNumero_controladores());
-        result1.setPrice(inversor.getPrecio());
+        result1.setCount(calculate.getInversor().getNumero_controladores());
+        result1.setPrice(calculate.getInversor().getPrecio());
         Result result2 = new Result();
-        result2.setArticle("Modulo (" + panel.getPotencia() + ")");
-        result2.setCount(Math.round(modulos));
-        result2.setPrice(panel.getPrecio());
+        result2.setArticle(String.format("Modulo (%d)", (int) calculate.getPanel().getPotencia()));
+        result2.setCount(Math.round(calculate.getModulos()));
+        result2.setPrice(calculate.getPanel().getPrecio());
         list = new ArrayList();
         list.add(result1);
         list.add(result2);
@@ -86,9 +89,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
         });
         setCancelable(false);
         listView = view.findViewById(R.id.list_view);
-        inversor = Constant.GSON.fromJson(getArguments().getString(Constant.INVERSOR), Inversor.class);
-        panel = Constant.GSON.fromJson(getArguments().getString(Constant.PANEL), Panel.class);
-        modulos = getArguments().getDouble(Constant.MODULOS);
+        calculate = Constant.GSON.fromJson(getArguments().getString(Constant.CALCULATE), Calculate.class);
         initObjects();
         initElements();
         return builder.create();
