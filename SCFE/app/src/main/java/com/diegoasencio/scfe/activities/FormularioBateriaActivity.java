@@ -195,28 +195,28 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 break;
             case R.id.spinner_city:
                 cityObj = cities[i];
-                peak_solar.setText(cityObj.getHora_solar_pico() + " h");
+                peak_solar.setText(cityObj.getHora_solar_pico_format());
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
                 panelObj = panel;
-                price_panel.setText(panel.getPrecio() + "");
-                potencia_modulo.setText(panel.getPotencia() + "");
-                vmpp.setText(panel.getVmpp() + "");
-                impp.setText(panel.getImpp() + "");
-                isc_panel.setText(panel.getIsc() + "");
+                price_panel.setText(panel.getPrecio_format());
+                potencia_modulo.setText(panel.getPotencia_format());
+                vmpp.setText(panel.getVmpp_format());
+                impp.setText(panel.getImpp_format());
+                isc_panel.setText(panel.getIsc_format());
                 dimension.setText(panel.getDimension());
                 break;
             case R.id.spinner_inversor:
                 Inversor inversor = inversors[i];
                 inversorObj = inversor;
-                controllers.setText(inversor.getNumero_controladores() + "");
-                involtage.setText(inversor.getVoltaje_entrada() + "");
-                system_voltage.setText(inversor.getVoltaje_sistema() + "");
-                idc.setText(inversor.getIdc() + "");
-                isc_inversor.setText(inversor.getIsc() + "");
-                efficiency.setText(inversor.getEficiencia() + "");
-                price_inversor.setText(inversor.getPrecio() + "");
+                controllers.setText(inversor.getNumero_controladores_format());
+                involtage.setText(inversor.getVoltaje_entrada_format());
+                system_voltage.setText(inversor.getVoltaje_sistema_format());
+                idc.setText(inversor.getIdc_format());
+                isc_inversor.setText(inversor.getIsc_format());
+                efficiency.setText(inversor.getEficiencia_format());
+                price_inversor.setText(inversor.getPrecio_format());
                 break;
             case R.id.spinner_battery:
                 Battery battery = batteries[i];

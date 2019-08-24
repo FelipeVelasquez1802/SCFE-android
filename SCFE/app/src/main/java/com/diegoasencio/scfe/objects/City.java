@@ -1,5 +1,7 @@
 package com.diegoasencio.scfe.objects;
 
+import com.diegoasencio.scfe.tools.Constant;
+
 public class City {
 
     private int id;
@@ -8,6 +10,10 @@ public class City {
 
     public double getHora_solar_pico() {
         return hora_solar_pico;
+    }
+
+    public String getHora_solar_pico_format() {
+        return Constant.FORMAT_HOURS.format(getHora_solar_pico());
     }
 
     public void setHora_solar_pico(double hora_solar_pico) {

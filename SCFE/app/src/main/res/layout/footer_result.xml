@@ -95,11 +95,5 @@
         android:text="@string/monthly_savings"
         android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/textview_note"
-        style="@style/TextViewCustom"
-        android:layout_below="@id/textview_monthly_saving"
-        android:text="@string/note_normal"
-        android:textColor="@android:color/black" />
 
 </RelativeLayout>

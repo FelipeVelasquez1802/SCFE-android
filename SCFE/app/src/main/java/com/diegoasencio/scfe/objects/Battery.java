@@ -1,37 +1,10 @@
 package com.diegoasencio.scfe.objects;
 
-public class Battery {
+public class Battery extends Product{
 
-    private int id;
-    private String nombre;
-    private double precio;
     private int capacidad;
     private int profundidad_descarga;
     private double voltaje;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
 
     public int getCapacidad() {
         return capacidad;

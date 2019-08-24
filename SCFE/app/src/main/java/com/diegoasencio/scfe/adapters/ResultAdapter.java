@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.objects.Result;
+import com.diegoasencio.scfe.tools.Constant;
 
 import java.util.List;
 
@@ -29,13 +30,13 @@ public class ResultAdapter extends ArrayAdapter<Result> {
         article.setText(result.getArticle());
 
         TextView count = convertView.findViewById(R.id.textview_count);
-        count.setText(result.getCount() + "");
+        count.setText(Constant.FORMAT_COUNT.format(result.getCount()));
 
         TextView price = convertView.findViewById(R.id.textview_price);
-        price.setText(result.getPrice() + "");
+        price.setText(Constant.FORMAT_MONEY.format(result.getPrice()));
 
         TextView total = convertView.findViewById(R.id.textview_total);
-        total.setText(result.getTotal() + "");
+        total.setText(Constant.FORMAT_MONEY.format(result.getTotal()));
         return convertView;
     }
 }

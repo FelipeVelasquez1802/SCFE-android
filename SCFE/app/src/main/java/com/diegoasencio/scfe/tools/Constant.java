@@ -2,6 +2,8 @@ package com.diegoasencio.scfe.tools;
 
 import com.google.gson.Gson;
 
+import java.text.DecimalFormat;
+
 public class Constant {
 
     public static final String PREFERENCE_NAME = "scfe_preferences";
@@ -14,5 +16,12 @@ public class Constant {
     public static final String PANEL = "panel";
     public static final String MODULOS = "modulos";
     public static final String CALCULATE = "calculate";
+    public static final DecimalFormat FORMAT_MONEY = new DecimalFormat("$#,###");
+    public static final DecimalFormat FORMAT_HOURS = new DecimalFormat("#.# h");
+    public static final DecimalFormat FORMAT_POWER = new DecimalFormat("#.# W");
+    public static final DecimalFormat FORMAT_VOLTAGE = new DecimalFormat("#.# V");
+    public static final DecimalFormat FORMAT_INTENSITY = new DecimalFormat("#.# A");
+    public static final DecimalFormat FORMAT_COUNT = new DecimalFormat("#.#");
+    public static final DecimalFormat FORMAT_PERCENTAGE = new DecimalFormat("#.# %");
 
 }

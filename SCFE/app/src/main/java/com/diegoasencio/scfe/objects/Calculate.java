@@ -39,7 +39,7 @@ public class Calculate {
     }
 
     public double getPp() {
-        return energy / getCity().getHora_solar_pico();
+        return Math.round(energy / getCity().getHora_solar_pico());
     }
 
     public double getModulos() {
@@ -52,7 +52,7 @@ public class Calculate {
     }
 
     public double getStrings() {
-        return getModulos() / getInversor().getNumero_controladores();
+        return Math.round(getModulos() / getInversor().getNumero_controladores());
     }
 
     public double getVstrings() {
@@ -68,8 +68,11 @@ public class Calculate {
     }
 
     public double getAhorroMensual() {
-        return getPagoFacturaMensualSinSF() - getPagoFacturaMensualConSF();
+        return Math.round(getPagoFacturaMensualSinSF() - getPagoFacturaMensualConSF());
     }
 
+    public boolean isCorrectInversor() {
+        return inversor.getPotencia() >= getPp();
+    }
 
 }

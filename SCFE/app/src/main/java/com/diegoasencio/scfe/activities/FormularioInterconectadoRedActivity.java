@@ -1,6 +1,7 @@
 package com.diegoasencio.scfe.activities;
 
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -181,28 +182,28 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 break;
             case R.id.spinner_city:
                 cityObj = cities[i];
-                peak_solar.setText(cityObj.getHora_solar_pico() + " h");
+                peak_solar.setText(cityObj.getHora_solar_pico_format());
                 break;
             case R.id.spinner_panel:
                 Panel panel = panels[i];
                 panelObj = panel;
-                price_panel.setText(panel.getPrecio() + "");
-                potencia_modulo.setText(panel.getPotencia() + "");
-                vmpp.setText(panel.getVmpp() + "");
-                impp.setText(panel.getImpp() + "");
-                isc_panel.setText(panel.getIsc() + "");
+                price_panel.setText(panel.getPrecio_format());
+                potencia_modulo.setText(panel.getPotencia_format());
+                vmpp.setText(panel.getVmpp_format());
+                impp.setText(panel.getImpp_format());
+                isc_panel.setText(panel.getIsc_format());
                 dimension.setText(panel.getDimension());
                 break;
             case R.id.spinner_inversor:
                 Inversor inversor = inversors[i];
                 inversorObj = inversor;
-                controllers.setText(inversor.getNumero_controladores() + "");
-                involtage.setText(inversor.getVoltaje_entrada() + "");
-                system_voltage.setText(inversor.getVoltaje_sistema() + "");
-                idc.setText(inversor.getIdc() + "");
-                isc_inversor.setText(inversor.getIsc() + "");
-                efficiency.setText(inversor.getEficiencia() + "");
-                price_inversor.setText(inversor.getPrecio() + "");
+                controllers.setText(inversor.getNumero_controladores_format());
+                involtage.setText(inversor.getVoltaje_entrada_format());
+                system_voltage.setText(inversor.getVoltaje_sistema_format());
+                idc.setText(inversor.getIdc_format());
+                isc_inversor.setText(inversor.getIsc_format());
+                efficiency.setText(inversor.getEficiencia_format());
+                price_inversor.setText(inversor.getPrecio_format());
                 break;
         }
     }
@@ -210,15 +211,6 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
-    }
-
-    private void setCalculate(double energy) {
-        pp = energy / cityObj.getHora_solar_pico();
-        modulos = pp / panelObj.getPotencia();
-        String[] dim = panelObj.getDimension().split("x");
-        area = modulos * Double.valueOf(dim[0]) * Double.valueOf(dim[1]);
-        strings = modulos / inversorObj.getNumero_controladores();
-        vstrings = inversorObj.getVoltaje_entrada() * strings;
     }
 
     @Override
@@ -229,7 +221,16 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 energy.setError(null);
                 if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
                     calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj);
-                    showDialog();
+                    if (calculate.isCorrectInversor()) {
+                        showDialog();
+                    } else {
+                        AlertDialog.Builder alert_error = new AlertDialog.Builder(this);
+                        alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message);
+                        alert_error.setNegativeButton(R.string.back, null);
+                        AlertDialog alertDialog = alert_error.create();
+                        alertDialog.show();
+                    }
+                    ((TextView) inversor.getSelectedView()).setError((calculate.isCorrectInversor()) ? null : "");
                 } else {
                     energy.setError(getString(R.string.fail_energy));
                 }

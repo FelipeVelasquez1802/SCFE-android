@@ -42,7 +42,7 @@
     <string name="fail_energy">Debe ingresar el consumo promedio de energía</string>
     <string name="number_string">Se debe colocar <b>%s</b> paneles en serie para cada controlador en este caso <b>%s</b></string>
     <string name="min_area">El area minima que se necesita para la instalación es de <b>%s</b> m²</string>
-    <string name="monthly_savings">Se genero un ahorro mensual de <b>%s</b></string>
-    <string name="note_normal"><b>Nota: </b>El valor total  no se tiene n cuenta la mano de obra.</string>
-    <string name="note_isolated"><b>Nota: </b></string>
+    <string name="monthly_savings">Se genero un ahorro mensual de <b>%s</b> pesos</string>
+    <string name="error_inversor_title">¡Algo a fallado!</string>
+    <string name="error_inversor_message">Este inversor no es soportado, por favor escoge otro.</string>
 </resources>

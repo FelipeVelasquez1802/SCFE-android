@@ -1,10 +1,9 @@
 package com.diegoasencio.scfe.objects;
 
-public class Panel {
+import com.diegoasencio.scfe.tools.Constant;
 
-    private int id;
-    private String nombre;
-    private double precio;
+public class Panel extends Product {
+
     private double potencia;
     private String dimension;
     private double vmpp;
@@ -15,6 +14,11 @@ public class Panel {
         return impp;
     }
 
+    public String getImpp_format() {
+        return Constant.FORMAT_INTENSITY.format(getImpp());
+    }
+
+
     public void setImpp(double impp) {
         this.impp = impp;
     }
@@ -23,12 +27,20 @@ public class Panel {
         return isc;
     }
 
+    public String getIsc_format() {
+        return Constant.FORMAT_INTENSITY.format(getIsc());
+    }
+
     public void setIsc(double isc) {
         this.isc = isc;
     }
 
     public double getVmpp() {
         return vmpp;
+    }
+
+    public String getVmpp_format() {
+        return Constant.FORMAT_VOLTAGE.format(getVmpp());
     }
 
     public void setVmpp(double vmpp) {
@@ -43,32 +55,13 @@ public class Panel {
         this.dimension = dimension;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
 
     public double getPotencia() {
         return potencia;
+    }
+
+    public String getPotencia_format() {
+        return Constant.FORMAT_POWER.format(getPotencia());
     }
 
     public void setPotencia(double potencia) {

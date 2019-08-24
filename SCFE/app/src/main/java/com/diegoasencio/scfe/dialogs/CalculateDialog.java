@@ -41,15 +41,14 @@ public class CalculateDialog extends DialogFragment implements Initials {
         for (int i = 0; i < list.size(); i++) {
             total += list.get(i).getTotal();
         }
-        result.setText(total + "");
+        result.setText(Constant.FORMAT_MONEY.format(total));
         TextView number_module = vFooter.findViewById(R.id.textview_number_modules);
-        number_module.setText(String.format(getString(R.string.number_string) + "", calculate.getStrings(), calculate.getInversor().getNumero_controladores()));
+        number_module.setText(String.format(getString(R.string.number_string) + "", Constant.FORMAT_COUNT.format(calculate.getStrings()),
+                Constant.FORMAT_COUNT.format(calculate.getInversor().getNumero_controladores())));
         TextView area_min = vFooter.findViewById(R.id.textview_area);
-        area_min.setText(String.format(getString(R.string.min_area) + "", calculate.getArea()));
+        area_min.setText(String.format(getString(R.string.min_area) + "", Constant.FORMAT_COUNT.format(calculate.getArea())));
         TextView monthly_saving = vFooter.findViewById(R.id.textview_monthly_saving);
-        monthly_saving.setText(String.format(getString(R.string.monthly_savings) + "", Math.round(calculate.getAhorroMensual())));
-        TextView note = vFooter.findViewById(R.id.textview_note);
-        note.setText(getText(R.string.note_normal));
+        monthly_saving.setText(String.format(getString(R.string.monthly_savings) + "", Constant.FORMAT_MONEY.format(calculate.getAhorroMensual())));
     }
 
     @Override
