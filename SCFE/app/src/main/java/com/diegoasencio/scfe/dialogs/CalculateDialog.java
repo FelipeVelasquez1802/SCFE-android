@@ -48,7 +48,12 @@ public class CalculateDialog extends DialogFragment implements Initials {
         TextView area_min = vFooter.findViewById(R.id.textview_area);
         area_min.setText(String.format(getString(R.string.min_area) + "", Constant.FORMAT_COUNT.format(calculate.getArea())));
         TextView monthly_saving = vFooter.findViewById(R.id.textview_monthly_saving);
-        monthly_saving.setText(String.format(getString(R.string.monthly_savings) + "", Constant.FORMAT_MONEY.format(calculate.getAhorroMensual())));
+        String message = "";
+        if (calculate.getBattery() != null) {
+            monthly_saving.setText(getString(R.string.recuperation_battery));
+        } else {
+            monthly_saving.setText(String.format(getString(R.string.monthly_savings) + "", Constant.FORMAT_MONEY.format(calculate.getAhorroMensual())));
+        }
     }
 
     @Override
@@ -64,6 +69,13 @@ public class CalculateDialog extends DialogFragment implements Initials {
         list = new ArrayList();
         list.add(result1);
         list.add(result2);
+        if (calculate.getBattery() != null) {
+            Result result3 = new Result();
+            result3.setArticle("Batería");
+            result3.setCount(calculate.getTotalBattery());
+            result3.setPrice(calculate.getBattery().getPrecio());
+            list.add(result3);
+        }
         resultAdapter = new ResultAdapter(getActivity(), list);
     }
 

@@ -1,6 +1,7 @@
 package com.diegoasencio.scfe.activities;
 
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +43,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private Inversor[] inversors;
     private Inversor inversorObj;
     private Battery[] batteries;
+    private Battery batteryObj;
 
     private Spinner state;
     private Spinner city;
@@ -50,6 +52,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private Spinner battery;
 
     private EditText energy;
+    private EditText days;
     private TextView peak_solar;
     private TextView price_panel;
     private TextView potencia_modulo;
@@ -87,8 +90,10 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
         inversor = findViewById(R.id.spinner_inversor);
         inversorObj = new Inversor();
         battery = findViewById(R.id.spinner_battery);
+        batteryObj = new Battery();
 
         energy = findViewById(R.id.edittext_energy);
+        days = findViewById(R.id.editText_days);
         peak_solar = findViewById(R.id.textview_peak_solar);
         price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
@@ -198,8 +203,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 peak_solar.setText(cityObj.getHora_solar_pico_format());
                 break;
             case R.id.spinner_panel:
-                Panel panel = panels[i];
-                panelObj = panel;
+                Panel panel = panelObj = panels[i];
                 price_panel.setText(panel.getPrecio_format());
                 potencia_modulo.setText(panel.getPotencia_format());
                 vmpp.setText(panel.getVmpp_format());
@@ -208,8 +212,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 dimension.setText(panel.getDimension());
                 break;
             case R.id.spinner_inversor:
-                Inversor inversor = inversors[i];
-                inversorObj = inversor;
+                Inversor inversor = inversorObj = inversors[i];
                 controllers.setText(inversor.getNumero_controladores_format());
                 involtage.setText(inversor.getVoltaje_entrada_format());
                 system_voltage.setText(inversor.getVoltaje_sistema_format());
@@ -219,11 +222,11 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 price_inversor.setText(inversor.getPrecio_format());
                 break;
             case R.id.spinner_battery:
-                Battery battery = batteries[i];
-                capacity_battery.setText(battery.getCapacidad() + "");
-                voltage.setText(battery.getVoltaje() + "");
-                profundity_discharge.setText(battery.getProfundidad_descarga() + "");
-                price_battery.setText(battery.getPrecio() + "");
+                Battery battery = batteryObj = batteries[i];
+                capacity_battery.setText(battery.getCapacidad_format());
+                voltage.setText(battery.getVoltaje_format());
+                profundity_discharge.setText(battery.getProfundidad_descarga_format());
+                price_battery.setText(battery.getPrecio_format());
                 break;
         }
     }
@@ -240,8 +243,22 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 String energyObj = energy.getText().toString();
                 energy.setError(null);
                 if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
-                    calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj);
-                    showDialog();
+                    String daysString = days.getText().toString();
+                    if (daysString != null && !daysString.equalsIgnoreCase("")) {
+                        calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj, batteryObj, Double.valueOf(daysString));
+                        if (calculate.isCorrectInversor()) {
+                            showDialog();
+                        } else {
+                            AlertDialog.Builder alert_error = new AlertDialog.Builder(this);
+                            alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message);
+                            alert_error.setNegativeButton(R.string.back, null);
+                            AlertDialog alertDialog = alert_error.create();
+                            alertDialog.show();
+                        }
+                        ((TextView) inversor.getSelectedView()).setError((calculate.isCorrectInversor()) ? null : "");
+                    } else {
+                        days.setError(getString(R.string.fail_days));
+                    }
                 } else {
                     energy.setError(getString(R.string.fail_energy));
                 }

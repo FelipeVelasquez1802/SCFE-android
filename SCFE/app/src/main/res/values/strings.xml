@@ -45,4 +45,6 @@
     <string name="monthly_savings">Se genero un ahorro mensual de <b>%s</b> pesos</string>
     <string name="error_inversor_title">¡Algo a fallado!</string>
     <string name="error_inversor_message">Este inversor no es soportado, por favor escoge otro.</string>
+    <string name="fail_days">Este campo es obligatorio.</string>
+    <string name="recuperation_battery">La recuperación de la inversión para un sistema fotovoltaico aislado esta entre 15 a 25 años.</string>
 </resources>

@@ -23,5 +23,6 @@ public class Constant {
     public static final DecimalFormat FORMAT_INTENSITY = new DecimalFormat("#.# A");
     public static final DecimalFormat FORMAT_COUNT = new DecimalFormat("#.#");
     public static final DecimalFormat FORMAT_PERCENTAGE = new DecimalFormat("#.# %");
+    public static final DecimalFormat FORMAT_BATTERY = new DecimalFormat("#.# ah");
 
 }
