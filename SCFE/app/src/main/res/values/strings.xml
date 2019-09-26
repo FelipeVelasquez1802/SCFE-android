@@ -4,7 +4,8 @@
     <string name="sistema_eolico">Sistema Eólico</string>
     <string name="interconectado_red">Interconectado a la red</string>
     <string name="whit_battery">Con baterias</string>
-    <string name="creditos">Desarrollado por @SimplexCE</string>
+    <!--string name="creditos">Desarrollado por @SimplexCE</string-->
+    <string name="creditos"></string>
     <string name="help">Ayuda</string>
     <string name="back">Atras</string>
     <string name="settings">Configuración</string>
