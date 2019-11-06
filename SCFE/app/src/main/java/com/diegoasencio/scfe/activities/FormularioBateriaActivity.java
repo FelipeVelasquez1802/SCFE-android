@@ -245,7 +245,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
                     String daysString = days.getText().toString();
                     if (daysString != null && !daysString.equalsIgnoreCase("")) {
-                        calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj, batteryObj, Double.valueOf(daysString));
+                        calculate = new Calculate(Double.valueOf(energyObj) * 1.2, cityObj, panelObj, inversorObj, batteryObj, Double.valueOf(daysString));
                         if (calculate.isCorrectInversor()) {
                             showDialog();
                         } else {
