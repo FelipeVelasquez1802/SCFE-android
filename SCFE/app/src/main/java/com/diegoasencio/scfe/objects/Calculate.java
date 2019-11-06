@@ -60,7 +60,11 @@ public class Calculate {
     }
 
     public double getPp() {
-        return Math.round(energy / getCity().getHora_solar_pico());
+        if (battery == null) {
+            return Math.round(energy / getCity().getHora_solar_pico());
+        } else {
+            return Math.round(getEnergy20() / getCity().getHora_solar_pico());
+        }
     }
 
     public double getModulos() {
