@@ -13,8 +13,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.MenuEolicoActivity"
+            android:parentActivityName=".activities.MenuPrincipalActivity"></activity>
+        <activity
             android:name=".activities.FormularioBateriaActivity"
-            android:parentActivityName=".activities.MenuFotovoltaicaActivity"></activity>
+            android:parentActivityName=".activities.MenuFotovoltaicaActivity" />
         <activity
             android:name=".activities.FormularioInterconectadoRedActivity"
             android:parentActivityName=".activities.MenuFotovoltaicaActivity" />

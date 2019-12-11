@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activities.MenuEolicoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextViewCustom.Title"
+            android:text="@string/system_eolico"
+            android:textAlignment="center" />
+
+        <TextView
+            style="@style/TextViewCustom.Question"
+            android:text="@string/consume" />
+
+        <EditText
+            android:id="@+id/energy"
+            style="@style/EditText"
+            android:layout_width="150dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            style="@style/TextViewCustom.Question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ubication_eolico" />
+
+        <include layout="@layout/component_ubication" />
+
+        <!--        <LinearLayout style="@style/LinearLayoutCustom.Item">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewd"-->
+        <!--                style="@style/TextViewCustom.Item"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="Departamento" />-->
+
+        <!--            <Spinner-->
+        <!--                android:id="@+id/spinner_state"-->
+        <!--                style="@style/Spinner"-->
+        <!--                android:layout_weight="1"></Spinner>-->
+
+        <!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+</ScrollView>

@@ -33,12 +33,15 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Initials
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()) {
             case R.id.button_fotovoltaica:
-                Intent intent = new Intent(this, MenuFotovoltaicaActivity.class);
+                intent = new Intent(this, MenuFotovoltaicaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.button_eolico:
+                intent = new Intent(this, MenuEolicoActivity.class);
+                startActivity(intent);
                 break;
             case R.id.image_button_help:
                 showDialog('0');

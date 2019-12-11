@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textViewd"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="Departamento" />
+
+        <Spinner
+            android:id="@+id/spinner_state"
+            style="@style/Spinner"
+            android:layout_weight="1"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textViewdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="Municipio" />
+
+        <Spinner
+            android:id="@+id/spinner_city"
+            style="@style/Spinner"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textViewsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/pak_solar" />
+
+        <TextView
+            android:id="@+id/textview_peak_solar"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+</LinearLayout>
