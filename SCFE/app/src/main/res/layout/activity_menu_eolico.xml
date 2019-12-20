@@ -33,22 +33,76 @@
             android:layout_height="wrap_content"
             android:text="@string/ubication_eolico" />
 
-        <include layout="@layout/component_ubication" />
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
-        <!--        <LinearLayout style="@style/LinearLayoutCustom.Item">-->
+            <TextView
+                android:id="@+id/textViewdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Municipio" />
 
-        <!--            <TextView-->
-        <!--                android:id="@+id/textViewd"-->
-        <!--                style="@style/TextViewCustom.Item"-->
-        <!--                android:layout_weight="1"-->
-        <!--                android:text="Departamento" />-->
+            <Spinner
+                android:id="@+id/spinner_city"
+                style="@style/Spinner"
+                android:layout_weight="1" />
+        </LinearLayout>
 
-        <!--            <Spinner-->
-        <!--                android:id="@+id/spinner_state"-->
-        <!--                style="@style/Spinner"-->
-        <!--                android:layout_weight="1"></Spinner>-->
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
 
-        <!--        </LinearLayout>-->
+            <TextView
+                android:id="@+id/textViewd"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="Departamento" />
+
+            <TextView
+                android:id="@+id/textview_state"
+                style="@style/Spinner"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+            <TextView
+                android:id="@+id/textViewsdt"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/speed" />
+
+            <TextView
+                android:id="@+id/textview_speed"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+            <TextView
+                android:id="@+id/textView_rosa"
+                style="@style/TextViewCustom.Item"
+                android:layout_weight="1"
+                android:text="@string/air_rosa" />
+
+            <TextView
+                android:id="@+id/textView_rosa_vientos"
+                style="@style/EditText"
+                android:layout_weight="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_calculate"
+            style="@style/ButtonCustom.Operation"
+            android:onClick="onClick"
+            android:text="@string/calculate" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextViewCustom.TextFooter"
+            android:text="@string/creditos"
+            android:textAlignment="center" />
 
     </LinearLayout>
 

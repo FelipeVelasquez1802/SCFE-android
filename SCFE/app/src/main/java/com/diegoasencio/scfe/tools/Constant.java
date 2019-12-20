@@ -11,6 +11,7 @@ public class Constant {
     public static String URL_DOMAIN = "http://192.168.0.28:8000/";
     public static final String URL_STATE = "departamentos/";
     public static final String URL_GENERAL = "general/";
+    public static final String URL_EOLICO = "eolico/";
     public static final Gson GSON = new Gson();
     public static final String INVERSOR = "inversor";
     public static final String PANEL = "panel";
@@ -24,5 +25,6 @@ public class Constant {
     public static final DecimalFormat FORMAT_COUNT = new DecimalFormat("#.#");
     public static final DecimalFormat FORMAT_PERCENTAGE = new DecimalFormat("#.# %");
     public static final DecimalFormat FORMAT_BATTERY = new DecimalFormat("#.# ah");
+    public static final DecimalFormat FORMAT_SPEED = new DecimalFormat("#.# m/s");
 
 }

@@ -51,4 +51,6 @@
     <string name="welcome_eolico">Bienvenidos al sistema experto para cálculo de generación de energía eólica</string>
     <string name="system_eolico">Sistema eolico</string>
     <string name="ubication_eolico">2. Seleccione el lugar a instalar sistema eolico</string>
+    <string name="speed">Velocidad del viento (m/s)</string>
+    <string name="air_rosa">Rosa de los vientos</string>
 </resources>
