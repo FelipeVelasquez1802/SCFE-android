@@ -53,4 +53,6 @@
     <string name="ubication_eolico">2. Seleccione el lugar a instalar sistema eolico</string>
     <string name="speed">Velocidad del viento (m/s)</string>
     <string name="air_rosa">Rosa de los vientos</string>
+    <string name="instrument">Instrumento</string>
+    <string name="characteristic">Caracteristica</string>
 </resources>

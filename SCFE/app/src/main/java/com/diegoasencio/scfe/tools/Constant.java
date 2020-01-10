@@ -16,6 +16,7 @@ public class Constant {
     public static final String INVERSOR = "inversor";
     public static final String PANEL = "panel";
     public static final String MODULOS = "modulos";
+    public static final String ARTICLE = "article";
     public static final String CALCULATE = "calculate";
     public static final DecimalFormat FORMAT_MONEY = new DecimalFormat("$#,###");
     public static final DecimalFormat FORMAT_HOURS = new DecimalFormat("#.# h");
