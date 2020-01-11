@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/texticsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="Inversor" />
+
+        <Spinner
+            android:id="@+id/spinner_inversor"
+            style="@style/Spinner"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textikhgdsddt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/controllers" />
+
+        <TextView
+            android:id="@+id/textview_controllers"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/tekficsdt1"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/involtage" />
+
+        <TextView
+            android:id="@+id/textview_involtage"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/tekficsdt11"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/system_voltage" />
+
+        <TextView
+            android:id="@+id/textview_system_voltage"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/tekficsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/IDC" />
+
+        <TextView
+            android:id="@+id/textview_ldc"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textjghfdsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/ISC" />
+
+        <TextView
+            android:id="@+id/textview_lsc_inversor"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textjghfdsdt1"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/efficiency" />
+
+        <TextView
+            android:id="@+id/textview_efficiency"
+            style="@style/EditText"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textjghfdsdt11"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/price" />
+
+        <TextView
+            android:id="@+id/textview_price_inversor"
+            style="@style/EditText"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -48,4 +48,11 @@
     <string name="error_inversor_message">Este inversor no es soportado, por favor escoge otro.</string>
     <string name="fail_days">Este campo es obligatorio.</string>
     <string name="recuperation_battery">La recuperación de la inversión para un sistema fotovoltaico aislado esta entre 15 a 25 años.</string>
+    <string name="welcome_eolico">Bienvenidos al sistema experto para cálculo de generación de energía eólica</string>
+    <string name="system_eolico">Sistema eolico</string>
+    <string name="ubication_eolico">2. Seleccione el lugar a instalar sistema eolico</string>
+    <string name="speed">Velocidad del viento (m/s)</string>
+    <string name="air_rosa">Rosa de los vientos</string>
+    <string name="instrument">Instrumento</string>
+    <string name="characteristic">Caracteristica</string>
 </resources>

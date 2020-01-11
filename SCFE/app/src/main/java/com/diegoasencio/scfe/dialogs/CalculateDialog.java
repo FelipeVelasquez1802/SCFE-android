@@ -44,10 +44,6 @@ public class CalculateDialog extends DialogFragment implements Initials {
         result.setText(Constant.FORMAT_MONEY.format(total));
         TextView number_module = vFooter.findViewById(R.id.textview_number_modules);
         String string = Constant.FORMAT_COUNT.format(calculate.getStrings());
-        /*if (calculate.getStrings() % 2 != 0 && calculate.getStrings() > 1) {
-            int value = (int) (calculate.getStrings() / 2);
-            string = Constant.FORMAT_COUNT.format(value) + " y " + Constant.FORMAT_COUNT.format(calculate.getStrings() - value);
-        }*/
         number_module.setText(String.format(getString(R.string.number_string) + "", string,
                 Constant.FORMAT_COUNT.format(calculate.getInversor().getNumero_controladores())));
         TextView area_min = vFooter.findViewById(R.id.textview_area);

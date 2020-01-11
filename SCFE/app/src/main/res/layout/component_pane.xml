@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textVicsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="Panel" />
+
+        <Spinner
+            android:id="@+id/spinner_panel"
+            style="@style/Spinner"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textfvfrVacvsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/power" />
+
+        <TextView
+            android:id="@+id/textview_potencia_modulo"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textview11"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/dimension" />
+
+        <TextView
+            android:id="@+id/textview_dimension"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textview1"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/vmpp" />
+
+        <TextView
+            android:id="@+id/textview_vpmm"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textview12"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/IMPP" />
+
+        <TextView
+            android:id="@+id/textview_lmpp"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textfrVacvsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="@string/ISC" />
+
+        <TextView
+            android:id="@+id/textview_lsc_panel"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutCustom.Item">
+
+        <TextView
+            android:id="@+id/textfvfrVicsdt"
+            style="@style/TextViewCustom.Item"
+            android:layout_weight="1"
+            android:text="Precio" />
+
+        <TextView
+            android:id="@+id/textview_price_panel"
+            style="@style/EditText"
+            android:layout_weight="1"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>

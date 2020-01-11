@@ -25,6 +25,7 @@
         android:id="@+id/button_eolico"
         style="@style/ButtonCustom"
         android:layout_below="@id/button_fotovoltaica"
+        android:onClick="onClick"
         android:text="@string/sistema_eolico" />
 
     <ImageButton
