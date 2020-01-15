@@ -78,6 +78,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
                                 eolicoGeneral = Constant.GSON.fromJson(response, EolicoGeneral.class);
                                 eolicos = eolicoGeneral.getVelocidad();
                                 autogeneradores = eolicoGeneral.getAutogenerador();
+                                Toast.makeText(MenuEolicoActivity.this, "autogeneradores: " + autogeneradores, Toast.LENGTH_SHORT).show();
                                 dumpdataCity();
                                 break;
                         }
