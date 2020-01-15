@@ -127,7 +127,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
 
     private void request(final String path) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = Constant.URL_DOMAIN + path;
+        String url = Constant.URL_DOMAIN + path + "?tipo=1";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override

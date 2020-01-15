@@ -118,7 +118,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
 
     private void request(final String path) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = Constant.URL_DOMAIN + path;
+        String url = Constant.URL_DOMAIN + path + "?tipo=0";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
