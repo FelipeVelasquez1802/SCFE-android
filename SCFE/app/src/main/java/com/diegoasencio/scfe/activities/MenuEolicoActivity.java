@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.dialogs.ArticleDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
+import com.diegoasencio.scfe.objects.Article;
 import com.diegoasencio.scfe.objects.Autogenerador;
 import com.diegoasencio.scfe.objects.Eolico;
 import com.diegoasencio.scfe.objects.EolicoGeneral;
@@ -38,6 +39,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
     private EolicoGeneral eolicoGeneral;
 
     private Eolico eolicos[];
+    private Eolico eolico;
     private Autogenerador autogeneradores[];
 
     @Override
@@ -63,6 +65,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
         eolicoGeneral = new EolicoGeneral();
         eolicos = new Eolico[0];
         autogeneradores = null;
+        eolico = new Eolico();
     }
 
 
@@ -78,7 +81,6 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
                                 eolicoGeneral = Constant.GSON.fromJson(response, EolicoGeneral.class);
                                 eolicos = eolicoGeneral.getVelocidad();
                                 autogeneradores = eolicoGeneral.getAutogenerador();
-                                Toast.makeText(MenuEolicoActivity.this, "autogeneradores: " + autogeneradores, Toast.LENGTH_SHORT).show();
                                 dumpdataCity();
                                 break;
                         }
@@ -104,7 +106,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (adapterView.getId()) {
             case R.id.spinner_city:
-                Eolico eolico = eolicos[i];
+                eolico = eolicos[i];
                 state.setText(eolico.getDepartamento());
                 speed.setText(eolico.getVelocidadFormat());
                 rosa.setText(eolico.getRosa_vientos());
@@ -122,7 +124,10 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
         if (this.autogeneradores != null) {
             for (Autogenerador a : this.autogeneradores) {
                 if (a.getPotencia() >= energy) {
-                    autogenerador = a;
+                    for (Article article : a.getArticulos()) {
+                        if (article.getVelocidad() >= eolico.getVelocidad())
+                            autogenerador = a;
+                    }
                 }
             }
         }
