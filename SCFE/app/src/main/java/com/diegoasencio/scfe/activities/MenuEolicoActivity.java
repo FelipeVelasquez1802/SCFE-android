@@ -125,7 +125,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
             for (Autogenerador a : this.autogeneradores) {
                 if (a.getPotencia() >= energy) {
                     for (Article article : a.getArticulos()) {
-                        if (article.getVelocidad() >= eolico.getVelocidad())
+                        if (article.getVelocidad() <= eolico.getVelocidad())
                             autogenerador = a;
                     }
                 }
