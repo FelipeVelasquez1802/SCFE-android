@@ -51,15 +51,20 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Initials
 
     private void showDialog(char c) {
         DialogFragment dialogFragment = null;
+        Bundle args = new Bundle();
         switch (c) {
             case '0':
                 dialogFragment = new HelpDialog();
+                args.putBoolean("state", false);
                 break;
             case '1':
                 dialogFragment = new SettingsDialog();
                 break;
         }
-        dialogFragment.show(getSupportFragmentManager(), "Help");
+        if (dialogFragment != null) {
+            dialogFragment.setArguments(args);
+            dialogFragment.show(getSupportFragmentManager(), "Help");
+        }
     }
 
     @Override

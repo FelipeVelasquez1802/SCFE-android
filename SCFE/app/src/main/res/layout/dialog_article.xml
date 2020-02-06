@@ -8,9 +8,17 @@
         layout="@layout/header_article" />
 
     <ListView
-        android:layout_below="@id/include"
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_above="@id/include_total"
+        android:layout_below="@id/include" />
+
+    <include
+        android:id="@+id/include_total"
+        layout="@layout/include_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

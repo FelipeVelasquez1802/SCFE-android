@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
+import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
 
@@ -36,6 +37,11 @@ public class HelpDialog extends DialogFragment {
                     }
                 });
         setCancelable(false);
+        boolean state = getArguments().getBoolean("state");
+        TextView description = view.findViewById(R.id.tvDescription);
+        if (state) {
+            description.setText(getString(R.string.second_description_help));
+        }
         return builder.create();
     }
 

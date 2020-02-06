@@ -38,6 +38,9 @@ public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.
 
     private void showDialog() {
         DialogFragment dialogFragment = new HelpDialog();
+        Bundle args = new Bundle();
+        args.putBoolean("state", true);
+        dialogFragment.setArguments(args);
         dialogFragment.show(getSupportFragmentManager(), "Help");
     }
 

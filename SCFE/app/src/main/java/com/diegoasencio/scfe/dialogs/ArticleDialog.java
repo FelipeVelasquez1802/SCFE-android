@@ -11,6 +11,7 @@ import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.adapters.ArticleAdapter;
@@ -30,6 +31,7 @@ public class ArticleDialog extends DialogFragment implements Initials {
     private ArticleAdapter adapter;
     private List<Article> list;
     private View view;
+    private TextView total;
 
     private Autogenerador autogenerador;
 
@@ -55,11 +57,15 @@ public class ArticleDialog extends DialogFragment implements Initials {
         listView = view.findViewById(R.id.list_view);
         adapter = new ArticleAdapter(getActivity(), list);
         listView.setAdapter(adapter);
+        total = view.findViewById(R.id.textview_result);
         autogenerador = Constant.GSON.fromJson(getArguments().getString(Constant.ARTICLE), Autogenerador.class);
+        double total_price = 0;
         for (Article article : autogenerador.getArticulos()) {
             list.add(article);
+            total_price += article.getPrecio();
         }
         adapter.notifyDataSetChanged();
+        total.setText(Constant.FORMAT_MONEY.format(total_price));
     }
 
     @Override

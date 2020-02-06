@@ -19,7 +19,7 @@
 
         <TextView
             style="@style/TextViewCustom.Question"
-            android:text="@string/consume" />
+            android:text="@string/consume_2" />
 
         <EditText
             android:id="@+id/energy"

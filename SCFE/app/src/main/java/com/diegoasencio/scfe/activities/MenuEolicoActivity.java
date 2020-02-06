@@ -122,14 +122,38 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
     private Autogenerador _find_item(double energy) {
         Autogenerador autogenerador = null;
         if (this.autogeneradores != null) {
-            for (Autogenerador a : this.autogeneradores) {
-                if (a.getPotencia() >= energy) {
-                    for (Article article : a.getArticulos()) {
-                        if (article.getVelocidad() <= eolico.getVelocidad())
-                            autogenerador = a;
+            int[][] values = {
+                    {399, 700},
+                    {700, 1200},
+                    {1200, 2500},
+                    {2500, 5000},
+                    {5000, 6500},
+                    {6500, 9000},
+                    {9000, 12000}
+            };
+            int[] value_alone = null;
+            for (int[] v : values) {
+                if (v[0] < energy && v[1] >= energy) {
+                    value_alone = v;
+                }
+            }
+            boolean flag = true;
+            if (value_alone != null) {
+                for (Autogenerador a : this.autogeneradores) {
+                    if (value_alone[0] < a.getPotencia() && value_alone[1] >= a.getPotencia()) {
+                        autogenerador = a;
+                    }
+                }
+                if (autogenerador != null) {
+                    for (Article article : autogenerador.getArticulos()) {
+                        if (article.getVelocidad() <= eolico.getVelocidad()) {
+                            flag = false;
+                            break;
+                        }
                     }
                 }
             }
+            if (flag) autogenerador = null;
         }
         return autogenerador;
     }
