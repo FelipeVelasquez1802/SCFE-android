@@ -225,7 +225,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                         showDialog();
                     } else {
                         AlertDialog.Builder alert_error = new AlertDialog.Builder(this);
-                        alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message);
+                        alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message_);
                         alert_error.setNegativeButton(R.string.back, null);
                         AlertDialog alertDialog = alert_error.create();
                         alertDialog.show();
