@@ -3,7 +3,7 @@
     <string name="sistema_fotovoltaico">Sistema Fotovoltaico</string>
     <string name="sistema_eolico">Sistema Eólico</string>
     <string name="interconectado_red">Interconectado a la red</string>
-    <string name="whit_battery">Con baterias</string>
+    <string name="whit_battery">Con baterías</string>
     <!--string name="creditos">Desarrollado por @SimplexCE</string-->
     <string name="creditos"></string>
     <string name="help">Ayuda</string>
@@ -36,13 +36,13 @@
     <string name="inversor_b">6. Selecciona el tipo de inversor</string>
     <string name="calculate">Calcular</string>
     <string name="result">Resultados</string>
-    <string name="article">Articulo</string>
+    <string name="article">Artículo</string>
     <string name="count">Cantidad</string>
     <string name="total">Total</string>
     <string name="power">Potencia del módulo (W)</string>
     <string name="fail_energy">Debe ingresar el consumo promedio de energía</string>
     <string name="number_string">Se debe colocar <b>%s</b> paneles en serie para cada controlador en este caso <b>%s</b></string>
-    <string name="min_area">El areá mínima que se necesita para la instalación es de <b>%s</b> m²</string>
+    <string name="min_area">El área mínima que se necesita para la instalación es de <b>%s</b> m²</string>
     <string name="monthly_savings">Se genero un ahorro mensual de <b>%s</b> pesos</string>
     <string name="error_inversor_title">¡Algo ha fallado!</string>
     <string name="error_inversor_message_">Este inversor no es soportado, por favor escoja otro.</string>

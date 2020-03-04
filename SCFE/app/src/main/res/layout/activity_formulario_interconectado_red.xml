@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +13,7 @@
         <TextView
             android:id="@+id/textViewa"
             style="@style/TextViewCustom.Title"
+            android:gravity="center_horizontal"
             android:text="Sistemas Interconectados a la Red"
             android:textAlignment="center" />
 
@@ -60,6 +60,7 @@
         <TextView
             android:id="@+id/textView"
             style="@style/TextViewCustom.TextFooter"
+            android:gravity="center_horizontal"
             android:text="@string/creditos"
             android:textAlignment="center" />
 

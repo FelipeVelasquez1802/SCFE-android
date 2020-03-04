@@ -13,11 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.view.adapters.ResultAdapter;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.Result;
 import com.diegoasencio.scfe.tools.Constant;
+import com.diegoasencio.scfe.view.adapters.ResultAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ public class CalculateDialog extends DialogFragment implements Initials {
     private ResultAdapter resultAdapter;
     private List<Result> list;
     private Calculate calculate;
+    private final String INVERSOR_NAME = "Inversor";
 
     @Override
     public void initElements() {
@@ -60,11 +61,11 @@ public class CalculateDialog extends DialogFragment implements Initials {
     @Override
     public void initObjects() {
         Result result1 = new Result();
-        result1.setArticle(Constant.INVERSOR);
+        result1.setArticle(INVERSOR_NAME);
         result1.setCount(1);
         result1.setPrice(calculate.getInversor().getPrecio());
         Result result2 = new Result();
-        result2.setArticle(String.format("Modulo (%d)", (int) calculate.getPanel().getPotencia()));
+        result2.setArticle(String.format("Módulo (%d)", (int) calculate.getPanel().getPotencia()));
         result2.setCount(Math.round(calculate.getModulos()));
         result2.setPrice(calculate.getPanel().getPrecio());
         list = new ArrayList();
