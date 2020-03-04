@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".view.activities.MenuFotovoltaicaActivity">
+    tools:context=".view.activities.PhotovoltaicMenuActivity">
 
     <TextView
         android:id="@+id/textViewa"
@@ -15,23 +15,23 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/button_interconectado_red"
+        android:id="@+id/button_networked"
         style="@style/ButtonCustom"
         android:layout_below="@id/textViewa"
         android:onClick="onClick"
         android:text="@string/interconectado_red" />
 
     <Button
-        android:id="@+id/button_baterias"
+        android:id="@+id/button_battery"
         style="@style/ButtonCustom"
-        android:layout_below="@id/button_interconectado_red"
+        android:layout_below="@id/button_networked"
         android:onClick="onClick"
         android:text="@string/whit_battery" />
 
     <ImageButton
         android:id="@+id/image_button_help"
         style="@style/ButtonCustom.Help"
-        android:layout_below="@id/button_baterias"
+        android:layout_below="@id/button_battery"
         android:onClick="onClick" />
 
 

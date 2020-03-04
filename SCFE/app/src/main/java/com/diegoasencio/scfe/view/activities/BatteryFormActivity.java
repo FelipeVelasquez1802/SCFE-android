@@ -30,7 +30,7 @@ import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
 
-public class FormularioBateriaActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
+public class BatteryFormActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
 
     private Calculate calculate;
 
@@ -150,7 +150,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(FormularioBateriaActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BatteryFormActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         queue.add(stringRequest);

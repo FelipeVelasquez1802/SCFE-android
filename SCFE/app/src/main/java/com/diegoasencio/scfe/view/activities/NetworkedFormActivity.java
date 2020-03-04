@@ -29,7 +29,7 @@ import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
 
-public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
+public class NetworkedFormActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
 
     private double pp;
     private double modulos;
@@ -139,7 +139,7 @@ public class FormularioInterconectadoRedActivity extends AppCompatActivity imple
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(FormularioInterconectadoRedActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NetworkedFormActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         queue.add(stringRequest);

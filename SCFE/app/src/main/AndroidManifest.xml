@@ -16,13 +16,13 @@
             android:name=".view.activities.MenuEolicoActivity"
             android:parentActivityName=".view.activities.PrincipalMenuActivity"></activity>
         <activity
-            android:name=".view.activities.FormularioBateriaActivity"
-            android:parentActivityName=".view.activities.MenuFotovoltaicaActivity" />
+            android:name=".view.activities.BatteryFormActivity"
+            android:parentActivityName=".view.activities.PhotovoltaicMenuActivity" />
         <activity
-            android:name=".view.activities.FormularioInterconectadoRedActivity"
-            android:parentActivityName=".view.activities.MenuFotovoltaicaActivity" />
+            android:name=".view.activities.NetworkedFormActivity"
+            android:parentActivityName=".view.activities.PhotovoltaicMenuActivity" />
         <activity
-            android:name=".view.activities.MenuFotovoltaicaActivity"
+            android:name=".view.activities.PhotovoltaicMenuActivity"
             android:parentActivityName=".view.activities.PrincipalMenuActivity" />
         <activity android:name=".view.activities.PrincipalMenuActivity" />
         <activity android:name=".view.activities.MainActivity">

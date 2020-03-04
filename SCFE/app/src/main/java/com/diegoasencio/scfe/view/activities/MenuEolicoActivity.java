@@ -21,13 +21,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.view.dialogs.ArticleDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.Article;
 import com.diegoasencio.scfe.objects.Autogenerador;
 import com.diegoasencio.scfe.objects.Eolico;
 import com.diegoasencio.scfe.objects.EolicoGeneral;
 import com.diegoasencio.scfe.tools.Constant;
+import com.diegoasencio.scfe.view.dialogs.ArticleDialog;
 
 import java.nio.charset.StandardCharsets;
 
@@ -82,7 +82,7 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
                     public void onResponse(String response) {
                         switch (path) {
                             case Constant.URL_EOLICO:
-                                String json = new String(response.getBytes(), StandardCharsets.ISO_8859_1);
+                                String json = new String(response.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                                 eolicoGeneral = Constant.GSON.fromJson(json, EolicoGeneral.class);
                                 eolicos = eolicoGeneral.getVelocidad();
                                 autogeneradores = eolicoGeneral.getAutogenerador();

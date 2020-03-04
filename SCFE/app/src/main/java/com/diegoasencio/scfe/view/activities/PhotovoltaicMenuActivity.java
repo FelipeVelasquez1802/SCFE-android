@@ -1,33 +1,40 @@
 package com.diegoasencio.scfe.view.activities;
 
 import android.content.Intent;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.View;
 
 import com.diegoasencio.scfe.R;
+import com.diegoasencio.scfe.interfaces.activities.PhotovoltaicMenuInterface;
+import com.diegoasencio.scfe.presenter.activities.PhotovoltaicMenuPresenter;
 import com.diegoasencio.scfe.view.dialogs.HelpDialog;
 
-public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.OnClickListener, HelpDialog.AlertDialogListener {
+public class PhotovoltaicMenuActivity extends BaseActivity implements PhotovoltaicMenuInterface.View,
+        View.OnClickListener, HelpDialog.AlertDialogListener {
+
+    private PhotovoltaicMenuInterface.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_fotovoltaica);
+        presenter = new PhotovoltaicMenuPresenter(this);
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.activity_menu_fotovoltaica;
     }
 
     @Override
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
-            case R.id.button_interconectado_red:
-                intent = new Intent(this, FormularioInterconectadoRedActivity.class);
-                startActivity(intent);
+            case R.id.button_networked:
+                presenter.goNetworkedActivity();
                 break;
-            case R.id.button_baterias:
-                intent = new Intent(this, FormularioBateriaActivity.class);
-                startActivity(intent);
+            case R.id.button_battery:
+                presenter.goBatteryActivity();
                 break;
             case R.id.image_button_help:
                 showDialog();
@@ -51,5 +58,11 @@ public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
 
+    }
+
+    @Override
+    public void goOtherActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
     }
 }

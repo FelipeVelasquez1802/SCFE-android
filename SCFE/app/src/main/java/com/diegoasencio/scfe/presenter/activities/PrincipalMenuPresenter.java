@@ -3,7 +3,7 @@ package com.diegoasencio.scfe.presenter.activities;
 import com.diegoasencio.scfe.interfaces.activities.PrincipalMenuInterface;
 import com.diegoasencio.scfe.model.activities.PrincipalMenuModel;
 import com.diegoasencio.scfe.view.activities.MenuEolicoActivity;
-import com.diegoasencio.scfe.view.activities.MenuFotovoltaicaActivity;
+import com.diegoasencio.scfe.view.activities.PhotovoltaicMenuActivity;
 
 public class PrincipalMenuPresenter implements PrincipalMenuInterface.Presenter {
 
@@ -17,7 +17,7 @@ public class PrincipalMenuPresenter implements PrincipalMenuInterface.Presenter 
 
     @Override
     public void goPhotoVoltaicActivity() {
-        view.goOtherActivity(MenuFotovoltaicaActivity.class);
+        view.goOtherActivity(PhotovoltaicMenuActivity.class);
     }
 
     @Override
