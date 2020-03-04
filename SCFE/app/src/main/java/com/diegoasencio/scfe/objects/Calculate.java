@@ -97,7 +97,7 @@ public class Calculate {
     }
 
     public double getEnergy20() {
-        return energy * 1.2;
+        return energy * 1.1;
     }
 
     public double getBankCapacity() {

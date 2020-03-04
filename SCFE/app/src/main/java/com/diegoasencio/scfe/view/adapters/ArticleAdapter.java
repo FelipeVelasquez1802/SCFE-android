@@ -1,4 +1,4 @@
-package com.diegoasencio.scfe.adapters;
+package com.diegoasencio.scfe.view.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
 import com.diegoasencio.scfe.objects.Article;
-import com.diegoasencio.scfe.objects.Autogenerador;
 
 import java.util.List;
 

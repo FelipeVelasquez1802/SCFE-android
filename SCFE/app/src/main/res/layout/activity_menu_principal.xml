@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".activities.MenuPrincipalActivity">
+    tools:context=".view.activities.PrincipalMenuActivity">
 
     <TextView
         android:id="@+id/textView3"

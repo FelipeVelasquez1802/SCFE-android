@@ -13,19 +13,19 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.MenuEolicoActivity"
-            android:parentActivityName=".activities.MenuPrincipalActivity"></activity>
+            android:name=".view.activities.MenuEolicoActivity"
+            android:parentActivityName=".view.activities.PrincipalMenuActivity"></activity>
         <activity
-            android:name=".activities.FormularioBateriaActivity"
-            android:parentActivityName=".activities.MenuFotovoltaicaActivity" />
+            android:name=".view.activities.FormularioBateriaActivity"
+            android:parentActivityName=".view.activities.MenuFotovoltaicaActivity" />
         <activity
-            android:name=".activities.FormularioInterconectadoRedActivity"
-            android:parentActivityName=".activities.MenuFotovoltaicaActivity" />
+            android:name=".view.activities.FormularioInterconectadoRedActivity"
+            android:parentActivityName=".view.activities.MenuFotovoltaicaActivity" />
         <activity
-            android:name=".activities.MenuFotovoltaicaActivity"
-            android:parentActivityName=".activities.MenuPrincipalActivity" />
-        <activity android:name=".activities.MenuPrincipalActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".view.activities.MenuFotovoltaicaActivity"
+            android:parentActivityName=".view.activities.PrincipalMenuActivity" />
+        <activity android:name=".view.activities.PrincipalMenuActivity" />
+        <activity android:name=".view.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

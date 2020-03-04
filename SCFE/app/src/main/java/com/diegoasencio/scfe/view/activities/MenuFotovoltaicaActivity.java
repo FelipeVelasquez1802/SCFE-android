@@ -1,14 +1,13 @@
-package com.diegoasencio.scfe.activities;
+package com.diegoasencio.scfe.view.activities;
 
 import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.dialogs.HelpDialog;
+import com.diegoasencio.scfe.view.dialogs.HelpDialog;
 
 public class MenuFotovoltaicaActivity extends AppCompatActivity implements View.OnClickListener, HelpDialog.AlertDialogListener {
 

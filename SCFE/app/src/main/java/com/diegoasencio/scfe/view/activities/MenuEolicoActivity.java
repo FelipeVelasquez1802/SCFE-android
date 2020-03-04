@@ -1,10 +1,11 @@
-package com.diegoasencio.scfe.activities;
+package com.diegoasencio.scfe.view.activities;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,13 +21,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.dialogs.ArticleDialog;
+import com.diegoasencio.scfe.view.dialogs.ArticleDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.Article;
 import com.diegoasencio.scfe.objects.Autogenerador;
 import com.diegoasencio.scfe.objects.Eolico;
 import com.diegoasencio.scfe.objects.EolicoGeneral;
 import com.diegoasencio.scfe.tools.Constant;
+
+import java.nio.charset.StandardCharsets;
 
 public class MenuEolicoActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, ArticleDialog.AlertDialogListener {
 
@@ -74,11 +77,13 @@ public class MenuEolicoActivity extends AppCompatActivity implements Initials, A
         String url = Constant.URL_DOMAIN + path;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
                         switch (path) {
                             case Constant.URL_EOLICO:
-                                eolicoGeneral = Constant.GSON.fromJson(response, EolicoGeneral.class);
+                                String json = new String(response.getBytes(), StandardCharsets.ISO_8859_1);
+                                eolicoGeneral = Constant.GSON.fromJson(json, EolicoGeneral.class);
                                 eolicos = eolicoGeneral.getVelocidad();
                                 autogeneradores = eolicoGeneral.getAutogenerador();
                                 dumpdataCity();

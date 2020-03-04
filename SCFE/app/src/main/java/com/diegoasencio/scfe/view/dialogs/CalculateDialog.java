@@ -1,4 +1,4 @@
-package com.diegoasencio.scfe.dialogs;
+package com.diegoasencio.scfe.view.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.adapters.ResultAdapter;
+import com.diegoasencio.scfe.view.adapters.ResultAdapter;
 import com.diegoasencio.scfe.interfaces.Initials;
 import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.Result;

@@ -1,4 +1,4 @@
-package com.diegoasencio.scfe.activities;
+package com.diegoasencio.scfe.view.activities;
 
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
@@ -19,9 +19,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.diegoasencio.scfe.R;
-import com.diegoasencio.scfe.dialogs.CalculateDialog;
+import com.diegoasencio.scfe.view.dialogs.CalculateDialog;
 import com.diegoasencio.scfe.interfaces.Initials;
-import com.diegoasencio.scfe.objects.Battery;
 import com.diegoasencio.scfe.objects.Calculate;
 import com.diegoasencio.scfe.objects.City;
 import com.diegoasencio.scfe.objects.General;
@@ -30,8 +29,13 @@ import com.diegoasencio.scfe.objects.Panel;
 import com.diegoasencio.scfe.objects.State;
 import com.diegoasencio.scfe.tools.Constant;
 
-public class FormularioBateriaActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
+public class FormularioInterconectadoRedActivity extends AppCompatActivity implements Initials, AdapterView.OnItemSelectedListener, View.OnClickListener, CalculateDialog.AlertDialogListener {
 
+    private double pp;
+    private double modulos;
+    private double area;
+    private double strings;
+    private double vstrings;
     private Calculate calculate;
 
     private General general;
@@ -42,17 +46,13 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private Panel panelObj;
     private Inversor[] inversors;
     private Inversor inversorObj;
-    private Battery[] batteries;
-    private Battery batteryObj;
 
     private Spinner state;
     private Spinner city;
     private Spinner panel;
     private Spinner inversor;
-    private Spinner battery;
 
     private EditText energy;
-    private EditText days;
     private TextView peak_solar;
     private TextView price_panel;
     private TextView potencia_modulo;
@@ -67,17 +67,15 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private TextView isc_inversor;
     private TextView efficiency;
     private TextView price_inversor;
-    private TextView capacity_battery;
-    private TextView voltage;
-    private TextView profundity_discharge;
-    private TextView price_battery;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_formulario_bateria);
+        setContentView(R.layout.activity_formulario_interconectado_red);
         initElements();
         initObjects();
+
     }
 
     @Override
@@ -89,11 +87,8 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
         panelObj = new Panel();
         inversor = findViewById(R.id.spinner_inversor);
         inversorObj = new Inversor();
-        battery = findViewById(R.id.spinner_battery);
-        batteryObj = new Battery();
 
         energy = findViewById(R.id.edittext_energy);
-        days = findViewById(R.id.editText_days);
         peak_solar = findViewById(R.id.textview_peak_solar);
         price_panel = findViewById(R.id.textview_price_panel);
         potencia_modulo = findViewById(R.id.textview_potencia_modulo);
@@ -108,10 +103,6 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
         isc_inversor = findViewById(R.id.textview_lsc_inversor);
         efficiency = findViewById(R.id.textview_efficiency);
         price_inversor = findViewById(R.id.textview_price_inversor);
-        capacity_battery = findViewById(R.id.textview_capacity_battery);
-        voltage = findViewById(R.id.textview_voltage);
-        profundity_discharge = findViewById(R.id.textview_profundity_discharge);
-        price_battery = findViewById(R.id.textview_price_battery);
 
         request(Constant.URL_GENERAL);
     }
@@ -127,7 +118,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
 
     private void request(final String path) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = Constant.URL_DOMAIN + path + "?tipo=1";
+        String url = Constant.URL_DOMAIN + path + "?tipo=0";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -138,11 +129,9 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                                 states = general.getDepartamentos();
                                 panels = general.getPaneles();
                                 inversors = general.getInversores();
-                                batteries = general.getBaterias();
                                 dumpdataState();
                                 dumpdataPanel();
                                 dumpdataInversor();
-                                dumpdataBattery();
                                 break;
                         }
                     }
@@ -150,7 +139,7 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(FormularioBateriaActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FormularioInterconectadoRedActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
         queue.add(stringRequest);
@@ -184,13 +173,6 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
         inversor.setOnItemSelectedListener(this);
     }
 
-    private void dumpdataBattery() {
-        ArrayAdapter<Battery> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, batteries);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        battery.setAdapter(arrayAdapter);
-        battery.setOnItemSelectedListener(this);
-    }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (adapterView.getId()) {
@@ -203,7 +185,8 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 peak_solar.setText(cityObj.getHora_solar_pico_format());
                 break;
             case R.id.spinner_panel:
-                Panel panel = panelObj = panels[i];
+                Panel panel = panels[i];
+                panelObj = panel;
                 price_panel.setText(panel.getPrecio_format());
                 potencia_modulo.setText(panel.getPotencia_format());
                 vmpp.setText(panel.getVmpp_format());
@@ -212,7 +195,8 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 dimension.setText(panel.getDimension());
                 break;
             case R.id.spinner_inversor:
-                Inversor inversor = inversorObj = inversors[i];
+                Inversor inversor = inversors[i];
+                inversorObj = inversor;
                 controllers.setText(inversor.getNumero_controladores_format());
                 involtage.setText(inversor.getVoltaje_entrada_format());
                 system_voltage.setText(inversor.getVoltaje_sistema_format());
@@ -220,13 +204,6 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 isc_inversor.setText(inversor.getIsc_format());
                 efficiency.setText(inversor.getEficiencia_format());
                 price_inversor.setText(inversor.getPrecio_format());
-                break;
-            case R.id.spinner_battery:
-                Battery battery = batteryObj = batteries[i];
-                capacity_battery.setText(battery.getCapacidad_format());
-                voltage.setText(battery.getVoltaje_format());
-                profundity_discharge.setText(battery.getProfundidad_descarga_format());
-                price_battery.setText(battery.getPrecio_format());
                 break;
         }
     }
@@ -243,22 +220,17 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
                 String energyObj = energy.getText().toString();
                 energy.setError(null);
                 if (energyObj != null && !energyObj.equalsIgnoreCase("")) {
-                    String daysString = days.getText().toString();
-                    if (daysString != null && !daysString.equalsIgnoreCase("")) {
-                        calculate = new Calculate(Double.valueOf(energyObj) * 1.2, cityObj, panelObj, inversorObj, batteryObj, Double.valueOf(daysString));
-                        if (calculate.isCorrectInversor()) {
-                            showDialog();
-                        } else {
-                            AlertDialog.Builder alert_error = new AlertDialog.Builder(this);
-                            alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message);
-                            alert_error.setNegativeButton(R.string.back, null);
-                            AlertDialog alertDialog = alert_error.create();
-                            alertDialog.show();
-                        }
-                        ((TextView) inversor.getSelectedView()).setError((calculate.isCorrectInversor()) ? null : "");
+                    calculate = new Calculate(Double.valueOf(energyObj), cityObj, panelObj, inversorObj);
+                    if (calculate.isCorrectInversor()) {
+                        showDialog();
                     } else {
-                        days.setError(getString(R.string.fail_days));
+                        AlertDialog.Builder alert_error = new AlertDialog.Builder(this);
+                        alert_error.setTitle(R.string.error_inversor_title).setMessage(R.string.error_inversor_message_);
+                        alert_error.setNegativeButton(R.string.back, null);
+                        AlertDialog alertDialog = alert_error.create();
+                        alertDialog.show();
                     }
+                    ((TextView) inversor.getSelectedView()).setError((calculate.isCorrectInversor()) ? null : "");
                 } else {
                     energy.setError(getString(R.string.fail_energy));
                 }
@@ -269,6 +241,11 @@ public class FormularioBateriaActivity extends AppCompatActivity implements Init
     private void showDialog() {
         DialogFragment dialogFragment = new CalculateDialog();
         Bundle args = new Bundle();
+        String panelString = Constant.GSON.toJson(panelObj);
+        String inversorString = Constant.GSON.toJson(inversorObj);
+        args.putString(Constant.PANEL, panelString);
+        args.putString(Constant.INVERSOR, inversorString);
+        args.putDouble(Constant.MODULOS, modulos);
         String calculateObj = Constant.GSON.toJson(calculate);
         args.putString(Constant.CALCULATE, calculateObj);
         dialogFragment.setArguments(args);

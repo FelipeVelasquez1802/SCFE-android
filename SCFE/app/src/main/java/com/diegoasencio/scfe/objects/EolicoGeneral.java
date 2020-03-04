@@ -1,7 +1,5 @@
 package com.diegoasencio.scfe.objects;
 
-import java.util.List;
-
 public class EolicoGeneral {
     private Eolico velocidad[];
     private Autogenerador autogenerador[];

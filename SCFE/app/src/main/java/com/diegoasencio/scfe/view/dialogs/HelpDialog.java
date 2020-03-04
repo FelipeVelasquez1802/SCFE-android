@@ -1,4 +1,4 @@
-package com.diegoasencio.scfe.dialogs;
+package com.diegoasencio.scfe.view.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
